@@ -13,11 +13,9 @@ const HeroSection: React.FC = () => {
     }
   }, []);
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleOrderClick = () => {
+    const orderEvent = new Event('order-now-click');
+    document.dispatchEvent(orderEvent);
   };
 
   return (
@@ -48,7 +46,7 @@ const HeroSection: React.FC = () => {
             <GlowingOrb />
             
             <Button 
-              onClick={scrollToContact}
+              onClick={handleOrderClick}
               className="bg-transparent border border-neon-blue text-neon-blue hover:bg-neon-blue/20 px-6 py-6 text-lg rounded-md transition-all duration-300 animate-glow neon-border hover:scale-105 transform"
             >
               Send Your First Order

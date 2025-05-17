@@ -1,9 +1,16 @@
 
 import React from 'react';
 import { Instagram } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  
+  // Dispatch the order event when Order Now is clicked
+  const handleOrderClick = () => {
+    const orderEvent = new Event('order-now-click');
+    document.dispatchEvent(orderEvent);
+  };
   
   return (
     <footer className="py-12 relative bg-gradient-to-t from-black to-[#0a001f]">
@@ -11,7 +18,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Logo & Info */}
           <div className="mb-8 md:mb-0">
-            <h2 className="text-xl font-bold text-gradient mb-2">DIGITAL<span className="text-neon-blue">CREATOR</span></h2>
+            <Link to="/" className="text-xl font-bold text-gradient mb-2 block">DIGITAL<span className="text-neon-blue">CREATOR</span></Link>
             <p className="text-white/70 text-sm">vibeswithbilal050@gmail.com</p>
           </div>
           
@@ -27,8 +34,9 @@ const Footer: React.FC = () => {
           <p className="text-white/50 text-sm">© {currentYear} Digital Creator. All rights reserved.</p>
           
           <div className="mt-4 md:mt-0 flex items-center gap-6">
-            <a href="#trust-security" className="text-white/50 hover:text-white text-sm transition-colors duration-300">Terms of Service</a>
-            <a href="#trust-security" className="text-white/50 hover:text-white text-sm transition-colors duration-300">Privacy Policy</a>
+            <Link to="/services" className="text-white/50 hover:text-white text-sm transition-colors duration-300">Services</Link>
+            <Link to="/portfolio" className="text-white/50 hover:text-white text-sm transition-colors duration-300">Portfolio</Link>
+            <button onClick={handleOrderClick} className="text-neon-blue hover:text-white text-sm transition-colors duration-300">Order Now</button>
           </div>
         </div>
       </div>
