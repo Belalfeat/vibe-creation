@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from 'lucide-react';
+import GlowingOrb from './GlowingOrb';
 
 const HeroSection: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -35,11 +36,17 @@ const HeroSection: React.FC = () => {
             Empowering Your Digital Presence
           </h1>
           
-          <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto mb-4">
             Future-ready websites, chatbots, and AI-powered solutions
           </p>
           
-          <div className="mt-8">
+          <p className="text-lg md:text-xl text-neon-blue/80 max-w-2xl mx-auto">
+            Transform your vision into reality with powerful AI skills
+          </p>
+          
+          <div className="mt-8 flex flex-col md:flex-row items-center justify-center gap-8">
+            <GlowingOrb />
+            
             <Button 
               onClick={scrollToContact}
               className="bg-transparent border border-neon-blue text-neon-blue hover:bg-neon-blue/20 px-6 py-6 text-lg rounded-md transition-all duration-300 animate-glow neon-border hover:scale-105 transform"

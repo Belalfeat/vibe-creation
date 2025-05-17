@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Instagram, Youtube } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -17,17 +17,8 @@ const Footer: React.FC = () => {
           
           {/* Social Icons */}
           <div className="flex items-center gap-4">
-            <a href="#" className="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
+            <a href="https://www.instagram.com/vibecreation23/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
               <Instagram className="text-white/70 group-hover:text-neon-blue transition-colors duration-300" size={20} />
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
-              <Youtube className="text-white/70 group-hover:text-neon-blue transition-colors duration-300" size={20} />
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
-              <span className="text-white/70 group-hover:text-neon-blue transition-colors duration-300 font-bold">U</span>
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
-              <span className="text-white/70 group-hover:text-neon-blue transition-colors duration-300 font-bold">K</span>
             </a>
           </div>
         </div>
@@ -36,8 +27,8 @@ const Footer: React.FC = () => {
           <p className="text-white/50 text-sm">© {currentYear} Digital Creator. All rights reserved.</p>
           
           <div className="mt-4 md:mt-0 flex items-center gap-6">
-            <a href="#" className="text-white/50 hover:text-white text-sm transition-colors duration-300">Terms of Service</a>
-            <a href="#" className="text-white/50 hover:text-white text-sm transition-colors duration-300">Privacy Policy</a>
+            <a href="#trust-security" className="text-white/50 hover:text-white text-sm transition-colors duration-300">Terms of Service</a>
+            <a href="#trust-security" className="text-white/50 hover:text-white text-sm transition-colors duration-300">Privacy Policy</a>
           </div>
         </div>
       </div>

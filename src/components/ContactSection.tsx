@@ -1,10 +1,11 @@
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from '@/hooks/use-toast';
+import emailjs from 'emailjs-com';
 
 const ContactSection: React.FC = () => {
   const { toast } = useToast();
@@ -14,10 +15,10 @@ const ContactSection: React.FC = () => {
     service: '',
     budget: '',
     country: '',
-    upiId: '',
-    details: ''
+    message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -32,9 +33,14 @@ const ContactSection: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
+    emailjs.sendForm(
+      'service_p2xh4gv',
+      'template_9azo9os',
+      formRef.current!,
+      'CAv4W16MblZ-MWYZJ'
+    )
+    .then((result) => {
+      console.log('Email successfully sent!', result.text);
       toast({
         title: "Order Sent Successfully!",
         description: "We'll get back to you within 24 hours.",
@@ -47,11 +53,18 @@ const ContactSection: React.FC = () => {
         service: '',
         budget: '',
         country: '',
-        upiId: '',
-        details: ''
+        message: ''
       });
       setIsSubmitting(false);
-    }, 1500);
+    }, (error) => {
+      console.error('Failed to send email:', error.text);
+      toast({
+        title: "Failed to send order",
+        description: "Please try again or contact us directly via email.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+    });
   };
 
   return (
@@ -88,7 +101,7 @@ const ContactSection: React.FC = () => {
           
           {/* Contact Form */}
           <div className="w-full lg:w-2/3">
-            <form onSubmit={handleSubmit} className="glass-card p-6 md:p-8">
+            <form ref={formRef} onSubmit={handleSubmit} className="glass-card p-6 md:p-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="text-white text-sm mb-1 block">Full Name</label>
@@ -120,6 +133,7 @@ const ContactSection: React.FC = () => {
                 <div>
                   <label htmlFor="service" className="text-white text-sm mb-1 block">Service Category</label>
                   <Select
+                    name="service"
                     value={formData.service}
                     onValueChange={(value) => handleSelectChange('service', value)}
                   >
@@ -157,28 +171,16 @@ const ContactSection: React.FC = () => {
                     className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
                   />
                 </div>
-                
-                <div>
-                  <label htmlFor="upiId" className="text-white text-sm mb-1 block">UPI ID (If applicable)</label>
-                  <Input
-                    id="upiId"
-                    name="upiId"
-                    placeholder="Your UPI ID"
-                    value={formData.upiId}
-                    onChange={handleChange}
-                    className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
-                  />
-                </div>
               </div>
               
               <div className="mt-6">
-                <label htmlFor="details" className="text-white text-sm mb-1 block">Project Details</label>
+                <label htmlFor="message" className="text-white text-sm mb-1 block">Project Details</label>
                 <Textarea
-                  id="details"
-                  name="details"
+                  id="message"
+                  name="message"
                   placeholder="Tell me about your project requirements..."
                   rows={5}
-                  value={formData.details}
+                  value={formData.message}
                   onChange={handleChange}
                   className="bg-white/10 border-white/20 text-white placeholder:text-white/50 resize-none"
                 />
@@ -196,47 +198,6 @@ const ContactSection: React.FC = () => {
         </div>
       </div>
       
-      {/* Privacy Policy Section */}
-      <div className="container mx-auto px-6 mt-20">
-        <div className="glass-card p-8">
-          <h3 className="text-2xl font-bold text-gradient mb-6">Privacy Policy</h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div>
-              <h4 className="text-neon-blue font-medium mb-3">Payment Terms</h4>
-              <p className="text-white/70 text-sm">
-                50% of the project fee is required upfront to begin work, with the remaining 50% 
-                due after you've reviewed and approved the preview of the completed project.
-              </p>
-            </div>
-            
-            <div>
-              <h4 className="text-neon-blue font-medium mb-3">Delivery Timeline</h4>
-              <p className="text-white/70 text-sm">
-                Delivery times vary based on project complexity. Upon accepting your order, 
-                I'll provide a specific estimated completion date for your approval.
-              </p>
-            </div>
-            
-            <div>
-              <h4 className="text-neon-blue font-medium mb-3">Revisions</h4>
-              <p className="text-white/70 text-sm">
-                Each project includes up to three rounds of revisions. Additional revision 
-                requests may incur extra charges based on the scope of changes requested.
-              </p>
-            </div>
-            
-            <div>
-              <h4 className="text-neon-blue font-medium mb-3">Refund Policy</h4>
-              <p className="text-white/70 text-sm">
-                No refunds are provided after work has begun on your project. Please ensure 
-                you provide clear requirements before the project starts.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Background Elements */}
       <div className="absolute top-1/4 right-0 w-80 h-80 rounded-full bg-neon-blue/10 blur-3xl"></div>
       <div className="absolute bottom-1/4 left-0 w-80 h-80 rounded-full bg-neon-purple/10 blur-3xl"></div>
