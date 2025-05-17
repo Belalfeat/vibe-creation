@@ -1,0 +1,72 @@
+
+import React, { useEffect, useRef } from 'react';
+import { Button } from "@/components/ui/button";
+import { ChevronDown } from 'lucide-react';
+
+const HeroSection: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.7;
+    }
+  }, []);
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden tech-bg">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/60 to-[#0a001f] z-10"></div>
+      
+      {/* Background Elements */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-1/4 left-1/4 w-40 h-40 rounded-full bg-neon-blue/20 blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-60 h-60 rounded-full bg-neon-purple/20 blur-3xl animate-pulse"></div>
+      </div>
+      
+      <div className="container mx-auto px-6 z-20 text-center">
+        <div className="space-y-6 animate-fade-in">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gradient tracking-tight leading-tight">
+            Empowering Your Digital Presence
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto">
+            Future-ready websites, chatbots, and AI-powered solutions
+          </p>
+          
+          <div className="mt-8">
+            <Button 
+              onClick={scrollToContact}
+              className="bg-transparent border border-neon-blue text-neon-blue hover:bg-neon-blue/20 px-6 py-6 text-lg rounded-md transition-all duration-300 animate-glow neon-border hover:scale-105 transform"
+            >
+              Send Your First Order
+            </Button>
+          </div>
+        </div>
+      </div>
+      
+      <div className="scroll-indicator z-20">
+        <div className="mouse">
+          <div className="wheel"></div>
+        </div>
+        <ChevronDown className="text-white/50 animate-bounce" size={20} />
+      </div>
+      
+      {/* Grid Overlay */}
+      <div 
+        className="absolute inset-0 z-0 opacity-20" 
+        style={{
+          backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2300eeff' fill-opacity='0.2'%3E%3Cpath d='M0 0h50v50H0V0zm50 50h50v50H50V50z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+          backgroundSize: "60px 60px"
+        }}
+      />
+    </section>
+  );
+};
+
+export default HeroSection;
