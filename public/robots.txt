@@ -14,4 +14,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://digitalcreator.lovable.app/sitemap.xml
+Sitemap: https://vibebot.in/sitemap.xml

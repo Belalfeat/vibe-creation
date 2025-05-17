@@ -10,10 +10,10 @@ import DiscountBanner from '../components/DiscountBanner';
 const Order: React.FC = () => {
   // Update document title and meta description programmatically
   React.useEffect(() => {
-    document.title = "Order Affordable Website & AI Chatbot Services | Special Discount";
+    document.title = "Order Website & AI Chatbot Services | ₹899 Special Offer India";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Order custom website development at ₹899 (real price ₹2999) or AI chatbot at ₹499 (real price ₹999). Limited time offer with combo discounts available.");
+      metaDescription.setAttribute("content", "Order custom website development at ₹899 (real price ₹2999) or AI chatbot at ₹499 (real price ₹999). Limited time offer for businesses in India with UPI payment.");
     }
   }, []);
   

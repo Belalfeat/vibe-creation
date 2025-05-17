@@ -10,10 +10,10 @@ import DiscountBanner from '../components/DiscountBanner';
 const Services: React.FC = () => {
   // Update document title and meta description programmatically
   React.useEffect(() => {
-    document.title = "Professional Digital Services | Websites, AI Chatbots & Prompt Engineering";
+    document.title = "Website & AI Chatbot Services India | Affordable from ₹899";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Affordable website development, custom AI chatbot creation, and expert prompt engineering services tailored for businesses looking to enhance their digital presence. Get premium solutions at competitive prices.");
+      metaDescription.setAttribute("content", "Affordable website development from ₹899, custom AI chatbot creation from ₹499, and expert prompt engineering services. Get premium solutions at competitive prices in India.");
     }
   }, []);
   
@@ -23,7 +23,7 @@ const Services: React.FC = () => {
       <div className="pt-24">
         <DiscountBanner />
         <h1 className="text-4xl md:text-5xl font-bold text-center text-gradient mb-6">
-          My Services
+          Our Services
         </h1>
         <div className="container mx-auto px-6">
           <p className="text-white/70 text-center mb-12 max-w-2xl mx-auto">

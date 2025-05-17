@@ -8,10 +8,10 @@ import OrderFormPopup from '../components/OrderFormPopup';
 const Contact: React.FC = () => {
   // Update document title and meta description programmatically
   React.useEffect(() => {
-    document.title = "Contact Digital Creator | Website & AI Chatbot Services";
+    document.title = "Contact VibeBots | Website & AI Chatbot Services India";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Get in touch to discuss your website development, AI chatbot, or prompt engineering needs. Quick responses and affordable solutions for businesses of all sizes.");
+      metaDescription.setAttribute("content", "Get in touch with VibeBots to discuss your website development, AI chatbot, or prompt engineering needs. Quick responses and affordable solutions for businesses in India.");
     }
   }, []);
   
@@ -20,7 +20,7 @@ const Contact: React.FC = () => {
       <Navbar />
       <div className="pt-24">
         <h1 className="text-4xl md:text-5xl font-bold text-center text-gradient mb-6">
-          Contact Me
+          Contact Us
         </h1>
         <div className="container mx-auto px-6">
           <p className="text-white/70 text-center mb-12 max-w-2xl mx-auto">
