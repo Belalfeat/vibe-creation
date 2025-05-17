@@ -6,6 +6,15 @@ import ContactSection from '../components/ContactSection';
 import OrderFormPopup from '../components/OrderFormPopup';
 
 const Contact: React.FC = () => {
+  // Update document title and meta description programmatically
+  React.useEffect(() => {
+    document.title = "Contact Digital Creator | Website & AI Chatbot Services";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Get in touch to discuss your website development, AI chatbot, or prompt engineering needs. Quick responses and affordable solutions for businesses of all sizes.");
+    }
+  }, []);
+  
   return (
     <div className="min-h-screen tech-bg">
       <Navbar />
@@ -15,7 +24,7 @@ const Contact: React.FC = () => {
         </h1>
         <div className="container mx-auto px-6">
           <p className="text-white/70 text-center mb-12 max-w-2xl mx-auto">
-            Have questions or want to discuss your project? Reach out to me directly.
+            Have questions about website development, AI chatbot creation, or prompt engineering services? Reach out for a quick consultation and affordable quote.
           </p>
         </div>
         <ContactSection />

@@ -8,6 +8,15 @@ import OrderFormPopup from '../components/OrderFormPopup';
 import DiscountBanner from '../components/DiscountBanner';
 
 const Order: React.FC = () => {
+  // Update document title and meta description programmatically
+  React.useEffect(() => {
+    document.title = "Order Affordable Website & AI Chatbot Services | Special Discount";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Order custom website development at ₹899 (real price ₹2999) or AI chatbot at ₹499 (real price ₹999). Limited time offer with combo discounts available.");
+    }
+  }, []);
+  
   return (
     <div className="min-h-screen tech-bg">
       <Navbar />
@@ -18,7 +27,7 @@ const Order: React.FC = () => {
         </h1>
         <div className="container mx-auto px-6">
           <p className="text-white/70 text-center mb-12 max-w-2xl mx-auto">
-            Ready to get started? Fill out the form below to place your order and transform your digital presence.
+            Ready to transform your digital presence? Order affordable website development, AI chatbot creation, or prompt engineering services at special promotional prices.
           </p>
         </div>
         <ContactSection />

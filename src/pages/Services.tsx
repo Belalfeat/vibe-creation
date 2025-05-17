@@ -8,6 +8,15 @@ import OrderFormPopup from '../components/OrderFormPopup';
 import DiscountBanner from '../components/DiscountBanner';
 
 const Services: React.FC = () => {
+  // Update document title and meta description programmatically
+  React.useEffect(() => {
+    document.title = "Professional Digital Services | Websites, AI Chatbots & Prompt Engineering";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Affordable website development, custom AI chatbot creation, and expert prompt engineering services tailored for businesses looking to enhance their digital presence. Get premium solutions at competitive prices.");
+    }
+  }, []);
+  
   return (
     <div className="min-h-screen tech-bg">
       <Navbar />
@@ -18,7 +27,7 @@ const Services: React.FC = () => {
         </h1>
         <div className="container mx-auto px-6">
           <p className="text-white/70 text-center mb-12 max-w-2xl mx-auto">
-            Discover the range of digital services I offer to elevate your online presence.
+            Discover comprehensive digital services designed to elevate your online presence and drive meaningful business results.
           </p>
         </div>
         <ServicesSection />

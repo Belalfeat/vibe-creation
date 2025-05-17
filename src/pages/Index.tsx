@@ -13,6 +13,15 @@ import DiscountBanner from '../components/DiscountBanner';
 import OrderFormPopup from '../components/OrderFormPopup';
 
 const Index: React.FC = () => {
+  // Update document title and meta description programmatically
+  React.useEffect(() => {
+    document.title = "Digital Creator Portfolio | Website Development, AI Chatbots & Prompt Engineering";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Affordable website development, custom AI chatbot creation, and expert prompt engineering services by a skilled digital creator in India. Transform your digital presence today.");
+    }
+  }, []);
+
   return (
     <div className="min-h-screen tech-bg">
       <Navbar />
