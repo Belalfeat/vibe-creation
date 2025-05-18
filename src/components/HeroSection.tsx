@@ -30,8 +30,17 @@ const HeroSection: React.FC = () => {
       
       <div className="container mx-auto px-6 z-20 text-center">
         <div className="space-y-6 animate-fade-in">
+          <div className="flex justify-center mb-6">
+            <img 
+              src="/lovable-uploads/6ba6d661-5373-409c-9438-5b040793448e.png" 
+              alt="BotVibex Logo" 
+              className="h-24 w-auto company-logo"
+            />
+          </div>
+          
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gradient tracking-tight leading-tight">
-            Empowering Your Digital Presence
+            <span className="block">BotVibex</span>
+            <span className="text-xl md:text-2xl block mt-2 text-white/80">WEB DEVELOPMENT & AI SOLUTIONS</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto mb-4">

@@ -6,7 +6,7 @@ const DiscountBanner: React.FC = () => {
   return (
     <div className="w-full bg-gradient-to-r from-neon-blue/20 to-neon-purple/20 backdrop-blur-sm py-3 border-t border-b border-neon-blue/30">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-center flex-wrap">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-2">
           <div className="flex items-center mr-2 animate-pulse">
             <Zap className="text-neon-blue mr-1" size={20} />
             <span className="font-bold text-white">🔥 LIMITED TIME OFFER — FIRST WEEK ONLY 🔥</span>

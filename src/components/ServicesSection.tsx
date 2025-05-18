@@ -9,9 +9,19 @@ interface ServiceCardProps {
   icon: React.ReactNode;
   colorClass: string;
   borderClass: string;
+  imageUrl: string;
+  imageAlt: string;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, colorClass, borderClass }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ 
+  title, 
+  description, 
+  icon, 
+  colorClass, 
+  borderClass,
+  imageUrl,
+  imageAlt
+}) => {
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
@@ -20,9 +30,21 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, col
   };
 
   return (
-    <div className="glass-card hover-scale group p-6 md:p-8 h-full flex flex-col">
+    <div className="glass-card hover-scale premium-card group p-6 md:p-8 h-full flex flex-col">
       <div className={`w-16 h-16 rounded-lg flex items-center justify-center mb-6 ${colorClass} group-hover:scale-110 transition-transform duration-300`}>
         {icon}
+      </div>
+      
+      <div className="w-full h-48 mb-6 overflow-hidden rounded-lg feature-icon">
+        <img 
+          src={imageUrl} 
+          alt={imageAlt}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+        />
+        <div className="feature-overlay">
+          <span className="text-white font-medium">{title}</span>
+          <span className="text-white/70 text-sm">Explore Service</span>
+        </div>
       </div>
       
       <h3 className="text-2xl font-bold mb-4 group-hover:text-gradient transition-all duration-300">{title}</h3>
@@ -58,6 +80,8 @@ const ServicesSection: React.FC = () => {
             icon={<Code size={32} className="text-neon-blue" />}
             colorClass="bg-neon-blue/20"
             borderClass="border border-neon-blue neon-border"
+            imageUrl="/lovable-uploads/4fe84c43-888d-4033-bb73-3a18e567d7ef.png"
+            imageAlt="Website Development Services"
           />
           
           <ServiceCard 
@@ -66,6 +90,8 @@ const ServicesSection: React.FC = () => {
             icon={<MessageSquare size={32} className="text-neon-purple" />}
             colorClass="bg-neon-purple/20"
             borderClass="border border-neon-purple neon-border-purple"
+            imageUrl="/lovable-uploads/56bb1bf0-647a-426c-8c0a-03593274789f.png"
+            imageAlt="AI Chatbot Development Services"
           />
           
           <ServiceCard 
@@ -74,6 +100,8 @@ const ServicesSection: React.FC = () => {
             icon={<FileCode size={32} className="text-neon-blue" />}
             colorClass="bg-neon-blue/20"
             borderClass="border border-neon-blue neon-border"
+            imageUrl="/lovable-uploads/f3eb00a1-f1da-4c63-996a-35740d4606b9.png"
+            imageAlt="Prompt Engineering Services"
           />
         </div>
       </div>

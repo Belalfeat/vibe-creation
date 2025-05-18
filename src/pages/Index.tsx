@@ -11,6 +11,9 @@ import Footer from '../components/Footer';
 import ChatBot from '../components/ChatBot';
 import DiscountBanner from '../components/DiscountBanner';
 import OrderFormPopup from '../components/OrderFormPopup';
+import WelcomePopup from '../components/WelcomePopup';
+import CertificateSection from '../components/CertificateSection';
+import BrandSection from '../components/BrandSection';
 
 const Index: React.FC = () => {
   // Update document title and meta description programmatically
@@ -28,13 +31,16 @@ const Index: React.FC = () => {
       <DiscountBanner />
       <HeroSection />
       <AboutSection />
+      <BrandSection />
       <ServicesSection />
       <SkillHighlightsSection />
+      <CertificateSection />
       <PortfolioSection />
       <TrustSecuritySection />
       <Footer />
       <ChatBot />
       <OrderFormPopup />
+      <WelcomePopup />
     </div>
   );
 };
