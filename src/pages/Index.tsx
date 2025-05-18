@@ -14,6 +14,8 @@ import OrderFormPopup from '../components/OrderFormPopup';
 import WelcomePopup from '../components/WelcomePopup';
 import CertificateSection from '../components/CertificateSection';
 import BrandSection from '../components/BrandSection';
+import CodeRainAnimation from '../components/CodeRainAnimation';
+import FloatingCodeBlocks from '../components/FloatingCodeBlocks';
 import { Helmet } from 'react-helmet-async';
 
 const Index: React.FC = () => {
@@ -73,20 +75,27 @@ const Index: React.FC = () => {
           }
         `}</script>
       </Helmet>
-      <Navbar />
-      <DiscountBanner />
-      <HeroSection />
-      <AboutSection />
-      <BrandSection />
-      <ServicesSection />
-      <SkillHighlightsSection />
-      <CertificateSection />
-      <PortfolioSection />
-      <TrustSecuritySection />
-      <Footer />
-      <ChatBot />
-      <OrderFormPopup />
-      <WelcomePopup />
+      {/* 3D Code Animations */}
+      <CodeRainAnimation />
+      <FloatingCodeBlocks />
+      
+      {/* Main Content */}
+      <div className="relative z-10">
+        <Navbar />
+        <DiscountBanner />
+        <HeroSection />
+        <AboutSection />
+        <BrandSection />
+        <ServicesSection />
+        <SkillHighlightsSection />
+        <CertificateSection />
+        <PortfolioSection />
+        <TrustSecuritySection />
+        <Footer />
+        <ChatBot />
+        <OrderFormPopup />
+        <WelcomePopup />
+      </div>
     </div>
   );
 };
