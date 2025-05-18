@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -151,6 +153,51 @@
   .company-logo {
     filter: drop-shadow(0 0 8px rgba(0, 238, 255, 0.5));
   }
+
+  /* New form UI utilities */
+  .form-input-glow:focus {
+    box-shadow: 0 0 0 2px rgba(0, 238, 255, 0.3);
+  }
+
+  .animate-form-border {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .animate-form-border:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00eeff, transparent);
+    transition: 0.5s;
+  }
+
+  .animate-form-border:focus-within:after {
+    left: 0;
+  }
+
+  .futuristic-input {
+    @apply bg-white/10 border-white/20 text-white focus:border-neon-blue/70 transition-all duration-300;
+  }
+
+  .floating-button {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
 }
 
 /* Custom animations and styles */
@@ -239,4 +286,41 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 238, 255, 0.8);
+}
+
+/* Form styles */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #fff !important;
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-space {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Animated input effect */
+.animate-input-border {
+  position: relative;
+}
+
+.animate-input-border::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, #00eeff, #8a2be2);
+  transition: width 0.4s ease;
+}
+
+.animate-input-border:focus-within::before {
+  width: 100%;
 }
