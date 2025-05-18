@@ -8,10 +8,10 @@ import OrderFormPopup from '../components/OrderFormPopup';
 const Portfolio: React.FC = () => {
   // Update document title and meta description programmatically
   React.useEffect(() => {
-    document.title = "AI Chatbot & Website Portfolio | Custom Development Showcase";
+    document.title = "BotVibex Portfolio | AI Chatbot & Website Development Projects";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Browse through our portfolio of custom websites, AI chatbots, and prompt engineering projects. See how we've helped businesses in India transform their digital presence.");
+      metaDescription.setAttribute("content", "Browse our portfolio of successful AI chatbot implementations, custom website developments, and prompt engineering projects. See how we've helped businesses transform their digital presence.");
     }
   }, []);
   
@@ -20,11 +20,11 @@ const Portfolio: React.FC = () => {
       <Navbar />
       <div className="pt-24">
         <h1 className="text-4xl md:text-5xl font-bold text-center text-gradient mb-6">
-          Our Project Portfolio
+          AI Chatbot & Website Projects
         </h1>
         <div className="container mx-auto px-6">
           <p className="text-white/70 text-center mb-12 max-w-2xl mx-auto">
-            Explore our collection of custom websites, AI chatbots, and prompt engineering projects that have helped businesses achieve their digital goals.
+            Explore our collection of successful AI chatbot implementations, responsive website development projects, and prompt engineering solutions that have delivered real results.
           </p>
         </div>
         <PortfolioSection />

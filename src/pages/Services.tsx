@@ -10,10 +10,10 @@ import DiscountBanner from '../components/DiscountBanner';
 const Services: React.FC = () => {
   // Update document title and meta description programmatically
   React.useEffect(() => {
-    document.title = "Website & AI Chatbot Services India | Affordable from ₹899";
+    document.title = "AI Chatbot & Website Development Services | BotVibex";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Affordable website development from ₹899, custom AI chatbot creation from ₹499, and expert prompt engineering services. Get premium solutions at competitive prices in India.");
+      metaDescription.setAttribute("content", "Professional AI chatbot development, custom website creation, and prompt engineering services from BotVibex. Transform your business with our affordable AI solutions starting at ₹899.");
     }
   }, []);
   
@@ -23,11 +23,11 @@ const Services: React.FC = () => {
       <div className="pt-24">
         <DiscountBanner />
         <h1 className="text-4xl md:text-5xl font-bold text-center text-gradient mb-6">
-          Our Services
+          AI Development Services
         </h1>
         <div className="container mx-auto px-6">
           <p className="text-white/70 text-center mb-12 max-w-2xl mx-auto">
-            Discover comprehensive digital services designed to elevate your online presence and drive meaningful business results.
+            Explore our comprehensive AI chatbot development, website creation, and prompt engineering services designed to elevate your business in the digital landscape.
           </p>
         </div>
         <ServicesSection />

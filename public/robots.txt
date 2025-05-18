@@ -1,17 +1,29 @@
 
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://vibebot.in/sitemap.xml
+
+# Allow these bots full access
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
+User-agent: Yandexbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Social Media Bots
 User-agent: Twitterbot
 Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
-
-User-agent: *
-Allow: /
-
-Sitemap: https://vibebot.in/sitemap.xml

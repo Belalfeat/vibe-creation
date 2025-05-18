@@ -18,23 +18,23 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Logo & Info */}
           <div className="mb-8 md:mb-0">
-            <Link to="/" className="text-xl font-bold text-gradient mb-2 block">DIGITAL<span className="text-neon-blue">CREATOR</span></Link>
+            <Link to="/" className="text-xl font-bold text-gradient mb-2 block">BOT<span className="text-neon-blue">VIBEX</span></Link>
             <p className="text-white/70 text-sm">vibeswithbilal050@gmail.com</p>
           </div>
           
           {/* Social Icons */}
           <div className="flex items-center gap-4">
-            <a href="https://www.instagram.com/vibecreation23/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
+            <a href="https://www.instagram.com/vibecreation23/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:scale-110 transition-transform duration-300 group" aria-label="BotVibex Instagram">
               <Instagram className="text-white/70 group-hover:text-neon-blue transition-colors duration-300" size={20} />
             </a>
           </div>
         </div>
         
         <div className="border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-white/50 text-sm">© {currentYear} Digital Creator. All rights reserved.</p>
+          <p className="text-white/50 text-sm">© {currentYear} BotVibex. All rights reserved.</p>
           
           <div className="mt-4 md:mt-0 flex items-center gap-6">
-            <Link to="/services" className="text-white/50 hover:text-white text-sm transition-colors duration-300">Services</Link>
+            <Link to="/services" className="text-white/50 hover:text-white text-sm transition-colors duration-300">AI Services</Link>
             <Link to="/portfolio" className="text-white/50 hover:text-white text-sm transition-colors duration-300">Portfolio</Link>
             <button onClick={handleOrderClick} className="text-neon-blue hover:text-white text-sm transition-colors duration-300">Order Now</button>
           </div>

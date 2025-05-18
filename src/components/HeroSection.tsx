@@ -33,22 +33,22 @@ const HeroSection: React.FC = () => {
           <div className="flex justify-center mb-6">
             <img 
               src="/lovable-uploads/6ba6d661-5373-409c-9438-5b040793448e.png" 
-              alt="BotVibex Logo" 
+              alt="BotVibex - AI Chatbot & Website Development Company" 
               className="h-24 w-auto company-logo"
             />
           </div>
           
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gradient tracking-tight leading-tight">
             <span className="block">BotVibex</span>
-            <span className="text-xl md:text-2xl block mt-2 text-white/80">WEB DEVELOPMENT & AI SOLUTIONS</span>
+            <span className="text-xl md:text-2xl block mt-2 text-white/80">AI CHATBOT & WEBSITE DEVELOPMENT</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto mb-4">
-            Future-ready websites, chatbots, and AI-powered solutions
+            Transform your business with custom AI chatbots and responsive websites
           </p>
           
           <p className="text-lg md:text-xl text-neon-blue/80 max-w-2xl mx-auto">
-            Transform your vision into reality with powerful AI skills
+            Affordable AI solutions starting at just ₹499
           </p>
           
           <div className="mt-8 flex flex-col md:flex-row items-center justify-center gap-8">
@@ -58,7 +58,7 @@ const HeroSection: React.FC = () => {
               onClick={handleOrderClick}
               className="bg-transparent border border-neon-blue text-neon-blue hover:bg-neon-blue/20 px-6 py-6 text-lg rounded-md transition-all duration-300 animate-glow neon-border hover:scale-105 transform"
             >
-              Send Your First Order
+              Get Your Custom AI Solution Today
             </Button>
           </div>
         </div>

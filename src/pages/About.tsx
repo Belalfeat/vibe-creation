@@ -8,10 +8,10 @@ import OrderFormPopup from '../components/OrderFormPopup';
 const About: React.FC = () => {
   // Update document title and meta description programmatically
   React.useEffect(() => {
-    document.title = "About VibeBots | Expert Website & AI Chatbot Developer in India";
+    document.title = "About BotVibex | AI Chatbot & Website Development Experts";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Learn about our journey as a digital creator specializing in affordable website development, AI chatbots, and prompt engineering in India. Discover our skills and expertise.");
+      metaDescription.setAttribute("content", "Learn about BotVibex, your partner for AI chatbot development, website creation and prompt engineering. Discover our expertise, services and client success stories.");
     }
   }, []);
   
@@ -20,11 +20,11 @@ const About: React.FC = () => {
       <Navbar />
       <div className="pt-24">
         <h1 className="text-4xl md:text-5xl font-bold text-center text-gradient mb-6">
-          About Us
+          About BotVibex
         </h1>
         <div className="container mx-auto px-6">
           <p className="text-white/70 text-center mb-12 max-w-2xl mx-auto">
-            Learn more about our journey, skills, and passion for creating innovative digital solutions that help businesses thrive in the digital landscape.
+            Discover our journey in creating innovative AI chatbot solutions, responsive websites, and expert prompt engineering services that transform businesses.
           </p>
         </div>
         <AboutSection />

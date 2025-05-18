@@ -18,10 +18,10 @@ import BrandSection from '../components/BrandSection';
 const Index: React.FC = () => {
   // Update document title and meta description programmatically
   React.useEffect(() => {
-    document.title = "VibeBots: Website, AI Chatbot & Prompt Services | ₹899 Limited Offer";
+    document.title = "BotVibex: AI Chatbot & Website Development | ₹899 Special Offer";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Affordable website & AI chatbot development starting at ₹899. Trusted prompt engineering and custom AI tools for your business based in India. Order now!");
+      metaDescription.setAttribute("content", "Expert AI chatbot development and professional website creation services by BotVibex. Get custom AI solutions starting at just ₹899. Contact us today for prompt engineering services!");
     }
   }, []);
 

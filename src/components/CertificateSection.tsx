@@ -7,26 +7,26 @@ const CertificateSection: React.FC = () => {
     <section id="certification" className="py-20 relative tech-bg">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h3 className="text-neon-blue neon-text text-sm font-medium mb-2">VERIFIED CREDENTIALS</h3>
-          <h2 className="text-3xl md:text-4xl font-bold text-gradient">Verified by AI Experts</h2>
+          <h3 className="text-neon-blue neon-text text-sm font-medium mb-2">EXPERTISE VERIFICATION</h3>
+          <h2 className="text-3xl md:text-4xl font-bold text-gradient">Verified AI Expert Skills</h2>
           <p className="text-white/70 max-w-2xl mx-auto mt-4">
-            Certified skills and expertise to deliver high-quality AI solutions for your business
+            Certified expertise in AI chatbot development and prompt engineering to deliver high-quality solutions for your business
           </p>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="certificate-frame rounded-lg overflow-hidden">
             <img 
-              src="/lovable-uploads/f3eb00a1-f1da-4c63-996a-35740d4606b9.png" 
-              alt="Prompt Engineering Certificate" 
+              src="/lovable-uploads/56bb1bf0-647a-426c-8c0a-03593274789f.png" 
+              alt="AI Chatbot Development Certificate - BotVibex Expertise" 
               className="w-full h-auto rounded-lg"
             />
           </div>
           
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-gradient">Certified Prompt Engineering Skills</h3>
+            <h3 className="text-2xl font-bold text-gradient">Certified AI Development Skills</h3>
             <p className="text-white/70">
-              With professional certification in Prompt Engineering from KodeKloud, I bring industry-validated expertise to deliver powerful AI solutions that help your business thrive.
+              With professional certification in AI development and chatbot engineering, BotVibex brings industry-validated expertise to deliver powerful AI solutions that help your business thrive in the digital landscape.
             </p>
             
             <div className="space-y-4 mt-6">
@@ -35,8 +35,8 @@ const CertificateSection: React.FC = () => {
                   <Check className="text-neon-blue" size={20} />
                 </div>
                 <div>
-                  <h4 className="font-medium text-white">Advanced Prompt Design</h4>
-                  <p className="text-white/70 text-sm">Creating sophisticated prompts that generate consistent, high-quality outputs</p>
+                  <h4 className="font-medium text-white">AI Chatbot Development</h4>
+                  <p className="text-white/70 text-sm">Creating sophisticated AI chatbots that engage customers and streamline business operations</p>
                 </div>
               </div>
               
@@ -45,8 +45,8 @@ const CertificateSection: React.FC = () => {
                   <Check className="text-neon-blue" size={20} />
                 </div>
                 <div>
-                  <h4 className="font-medium text-white">System Optimization</h4>
-                  <p className="text-white/70 text-sm">Fine-tuning AI systems for maximum efficiency and performance</p>
+                  <h4 className="font-medium text-white">Website Optimization</h4>
+                  <p className="text-white/70 text-sm">Building SEO-friendly, responsive websites with modern design principles</p>
                 </div>
               </div>
               
@@ -56,7 +56,7 @@ const CertificateSection: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-medium text-white">Custom AI Solutions</h4>
-                  <p className="text-white/70 text-sm">Developing tailored AI solutions for specific business needs</p>
+                  <p className="text-white/70 text-sm">Developing tailored AI solutions for specific business needs and requirements</p>
                 </div>
               </div>
             </div>
@@ -64,8 +64,8 @@ const CertificateSection: React.FC = () => {
             <div className="bg-gradient-to-r from-neon-blue/10 to-neon-purple/10 border border-neon-blue/20 rounded-lg p-4 flex items-center gap-4 mt-6">
               <Badge className="text-neon-blue" size={24} />
               <div>
-                <h4 className="font-medium text-white">KodeKloud Certified</h4>
-                <p className="text-white/70 text-sm">Prompt Engineering 101 - Learn by Doing</p>
+                <h4 className="font-medium text-white">Professional AI Development</h4>
+                <p className="text-white/70 text-sm">Trusted by 50+ satisfied clients in India and beyond</p>
               </div>
             </div>
           </div>
