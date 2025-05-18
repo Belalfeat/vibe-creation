@@ -30,11 +30,9 @@ const SkillCard: React.FC<SkillCardProps> = ({
   colorClass, 
   borderClass 
 }) => {
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleOrderClick = () => {
+    const orderEvent = new Event('order-now-click');
+    document.dispatchEvent(orderEvent);
   };
 
   return (
@@ -78,7 +76,7 @@ const SkillCard: React.FC<SkillCardProps> = ({
       </div>
       
       <Button 
-        onClick={scrollToContact}
+        onClick={handleOrderClick}
         className={`mt-auto w-full bg-transparent ${borderClass} hover:bg-white/5 transition-all duration-300`}
       >
         Get Started
@@ -125,7 +123,7 @@ const SkillHighlightsSection: React.FC = () => {
         position: "Content Strategist"
       },
       icon: <FileCode size={32} className="text-neon-blue" />,
-      imageUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+      imageUrl: "/lovable-uploads/f3eb00a1-f1da-4c63-996a-35740d4606b9.png",
       colorClass: "bg-neon-blue/20",
       borderClass: "border border-neon-blue neon-border"
     },

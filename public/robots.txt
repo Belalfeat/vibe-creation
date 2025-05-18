@@ -27,3 +27,7 @@ Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
+
+# Blog sections
+Allow: /blog
+

@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from 'lucide-react';
 import GlowingOrb from './GlowingOrb';
+import { Link } from 'react-router-dom';
 
 const HeroSection: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -54,12 +55,22 @@ const HeroSection: React.FC = () => {
           <div className="mt-8 flex flex-col md:flex-row items-center justify-center gap-8">
             <GlowingOrb />
             
-            <Button 
-              onClick={handleOrderClick}
-              className="bg-transparent border border-neon-blue text-neon-blue hover:bg-neon-blue/20 px-6 py-6 text-lg rounded-md transition-all duration-300 animate-glow neon-border hover:scale-105 transform"
-            >
-              Get Your Custom AI Solution Today
-            </Button>
+            <div className="flex flex-col md:flex-row gap-4">
+              <Button 
+                onClick={handleOrderClick}
+                className="bg-transparent border border-neon-blue text-neon-blue hover:bg-neon-blue/20 px-6 py-6 text-lg rounded-md transition-all duration-300 animate-glow neon-border hover:scale-105 transform"
+              >
+                Get Your Custom AI Solution Today
+              </Button>
+              
+              <Link to="/blog">
+                <Button 
+                  className="bg-transparent border border-neon-purple text-neon-purple hover:bg-neon-purple/20 px-6 py-6 text-lg rounded-md transition-all duration-300 animate-glow neon-border-purple hover:scale-105 transform"
+                >
+                  Read Our Latest Blog
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
