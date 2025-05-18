@@ -6,7 +6,7 @@ import AdvancedContactForm from '../components/AdvancedContactForm';
 import OrderFormPopup from '../components/OrderFormPopup';
 import TrustSecuritySection from '../components/TrustSecuritySection';
 import { Helmet } from 'react-helmet-async';
-import { Mail, User, MessageSquare, WhatsApp } from 'lucide-react';
+import { Mail, User, MessageSquare, MessageCircle } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
 const Contact: React.FC = () => {
@@ -85,7 +85,7 @@ const Contact: React.FC = () => {
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
                       <div className="w-10 h-10 rounded-full bg-neon-blue/20 flex items-center justify-center mt-1">
-                        <Mail className="text-neon-blue w-5 h-5" alt="Email Icon" />
+                        <Mail className="text-neon-blue w-5 h-5" />
                       </div>
                       <div>
                         <p className="text-white font-medium">Email</p>
@@ -95,7 +95,7 @@ const Contact: React.FC = () => {
                     
                     <div className="flex items-start gap-3">
                       <div className="w-10 h-10 rounded-full bg-neon-purple/20 flex items-center justify-center mt-1">
-                        <User className="text-neon-purple w-5 h-5" alt="Social Media Icon" />
+                        <User className="text-neon-purple w-5 h-5" />
                       </div>
                       <div>
                         <p className="text-white font-medium">Social Media</p>
@@ -149,13 +149,13 @@ const Contact: React.FC = () => {
       {/* Floating Action Buttons */}
       <div className="fixed right-6 bottom-24 z-50">
         <Button className="rounded-full w-14 h-14 bg-neon-purple text-white hover:bg-neon-purple/80 shadow-lg shadow-neon-purple/30 flex items-center justify-center p-0 animate-pulse">
-          <WhatsApp className="w-6 h-6" alt="WhatsApp Chat Icon" />
+          <MessageCircle className="w-6 h-6" />
         </Button>
       </div>
       
       <div className="fixed right-6 bottom-6 z-50">
         <Button className="rounded-full px-6 py-5 bg-gradient-to-r from-neon-blue to-neon-purple text-white hover:from-neon-purple hover:to-neon-blue shadow-lg shadow-neon-blue/30 transition-all duration-300 flex items-center gap-2">
-          <MessageSquare className="w-5 h-5" alt="Hire Me Icon" />
+          <MessageSquare className="w-5 h-5" />
           <span className="font-medium">Hire Me</span>
         </Button>
       </div>
