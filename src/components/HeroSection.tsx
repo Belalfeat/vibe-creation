@@ -59,6 +59,7 @@ const HeroSection: React.FC = () => {
               <Button 
                 onClick={handleOrderClick}
                 className="bg-transparent border border-neon-blue text-neon-blue hover:bg-neon-blue/20 px-6 py-6 text-lg rounded-md transition-all duration-300 animate-glow neon-border hover:scale-105 transform"
+                aria-label="Get your custom AI solution today"
               >
                 Get Your Custom AI Solution Today
               </Button>
@@ -66,10 +67,20 @@ const HeroSection: React.FC = () => {
               <Link to="/blog">
                 <Button 
                   className="bg-transparent border border-neon-purple text-neon-purple hover:bg-neon-purple/20 px-6 py-6 text-lg rounded-md transition-all duration-300 animate-glow neon-border-purple hover:scale-105 transform"
+                  aria-label="Read our latest blog posts about AI technology"
                 >
                   Read Our Latest Blog
                 </Button>
               </Link>
+            </div>
+          </div>
+          
+          <div className="mt-8">
+            <p className="text-white/60 text-sm">Serving clients worldwide with advanced AI solutions</p>
+            <div className="flex justify-center gap-4 mt-2">
+              <span className="text-white/80 text-sm">✓ Secure Payment</span>
+              <span className="text-white/80 text-sm">✓ 24/7 Support</span>
+              <span className="text-white/80 text-sm">✓ 100% Satisfaction</span>
             </div>
           </div>
         </div>

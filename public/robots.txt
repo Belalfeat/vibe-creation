@@ -1,9 +1,12 @@
 
+# BotVibex - AI Chatbot & Website Development Company
+# https://botvibex.site
+
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://vibebot.in/sitemap.xml
+Sitemap: https://botvibex.site/sitemap.xml
 
 # Allow these bots full access
 User-agent: Googlebot
@@ -28,6 +31,10 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-# Blog sections
+# Main sections
+Allow: /about
+Allow: /services
+Allow: /portfolio
 Allow: /blog
-
+Allow: /contact
+Allow: /order
