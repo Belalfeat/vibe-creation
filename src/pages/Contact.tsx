@@ -1,11 +1,11 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SmartContactForm from '../components/SmartContactForm';
 import OrderFormPopup from '../components/OrderFormPopup';
 import TrustSecuritySection from '../components/TrustSecuritySection';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
+import { Mail, User } from 'lucide-react';
 
 const Contact: React.FC = () => {
   return (

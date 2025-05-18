@@ -1,9 +1,9 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Button } from "@/components/ui/button";
 import OrderFormPopup from '../components/OrderFormPopup';
+import { Helmet } from 'react-helmet-async';
 
 const Blog: React.FC = () => {
   // Update document title and meta description programmatically

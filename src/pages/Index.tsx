@@ -14,7 +14,7 @@ import OrderFormPopup from '../components/OrderFormPopup';
 import WelcomePopup from '../components/WelcomePopup';
 import CertificateSection from '../components/CertificateSection';
 import BrandSection from '../components/BrandSection';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 const Index: React.FC = () => {
   return (

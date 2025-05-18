@@ -6,7 +6,8 @@ import SmartContactForm from '../components/SmartContactForm';
 import TrustSecuritySection from '../components/TrustSecuritySection';
 import DiscountBanner from '../components/DiscountBanner';
 import OrderFormPopup from '../components/OrderFormPopup';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
+import { MessageSquare, Check, Code, FileText } from 'lucide-react';
 
 const Order: React.FC = () => {
   return (
