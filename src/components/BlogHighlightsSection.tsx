@@ -7,30 +7,30 @@ const BlogHighlightsSection: React.FC = () => {
   const blogs = [
     {
       id: 1,
-      title: "Top 5 Reasons Why AI Chatbots Are Essential for Modern Websites",
-      brief: "Discover how AI chatbots improve user experience, automate repetitive tasks, increase conversion rates, reduce support costs, and provide valuable customer insights for your business.",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-      date: "May 15, 2025",
-      readTime: "5 min read",
-      url: "/blog/ai-chatbots-essential-modern-websites"
+      title: "Top 5 Ways AI Chatbots Are Transforming Online Business",
+      brief: "Discover how AI-powered chatbots are revolutionizing customer service with 24/7 availability, increasing conversion rates by up to 30%, reducing operational costs by 40%, and providing personalized experiences that boost customer satisfaction.",
+      image: "https://images.unsplash.com/photo-1677608913670-909179c8a42f",
+      date: "May 19, 2025",
+      readTime: "6 min read",
+      url: "/blog/top-ways-ai-chatbots-transforming-business"
     },
     {
       id: 2,
-      title: "How AI Chatbots Can Increase Sales and Save Time for Your Business",
-      brief: "Learn how chatbots handle customer support 24/7, streamline lead generation, and deliver results across industries like eCommerce, real estate, hospitality, and SaaS platforms.",
-      image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b",
-      date: "May 10, 2025",
-      readTime: "6 min read",
-      url: "/blog/ai-chatbots-increase-sales-save-time"
+      title: "How Prompt Engineering is Making AI Smarter in 2025",
+      brief: "Explore the latest advancements in prompt engineering that are enabling more intelligent AI responses, including chain-of-thought prompting, few-shot learning techniques, and specialized prompt frameworks that produce up to 40% more accurate results.",
+      image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485",
+      date: "May 17, 2025",
+      readTime: "8 min read",
+      url: "/blog/prompt-engineering-making-ai-smarter"
     },
     {
       id: 3,
-      title: "Prompt Engineering: The Secret Skill Powering the Future of AI",
-      brief: "Explore the art and science of prompt engineering, how it works behind the scenes, why it's crucial for high-performing AI systems, and how it dramatically enhances chatbot performance.",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-      date: "May 5, 2025",
+      title: "Best No-Code Tools for AI Website Development in 2025",
+      brief: "Comprehensive comparison of the top no-code platforms that integrate AI capabilities for website development, featuring drag-and-drop interfaces, pre-built AI components, and seamless integration options for businesses.",
+      image: "https://images.unsplash.com/photo-1633412802994-5c058f151b66",
+      date: "May 15, 2025",
       readTime: "7 min read",
-      url: "/blog/prompt-engineering-secret-skill"
+      url: "/blog/no-code-tools-ai-website-development"
     }
   ];
 

@@ -2,7 +2,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import ImprovedContactForm from '../components/ImprovedContactForm';
+import SmartContactForm from '../components/SmartContactForm';
 import OrderFormPopup from '../components/OrderFormPopup';
 import TrustSecuritySection from '../components/TrustSecuritySection';
 import { Helmet } from 'react-helmet-async';
@@ -13,34 +13,19 @@ const Contact: React.FC = () => {
   return (
     <div className="min-h-screen tech-bg">
       <Helmet>
-        <title>Hire AI Chatbot Developer | BotVibex Services</title>
-        <meta name="description" content="Get your custom AI chatbot, website, or automation system from India's top AI builder. Fast delivery. No code. Full support." />
-        <meta name="keywords" content="AI chatbot for business, prompt engineer services, AI website developer India, chatbot builder for WhatsApp, AI lead generation chatbot" />
+        <title>Contact BotVibex | AI Chatbot & Website Development</title>
+        <meta name="description" content="Get in touch for custom AI chatbots, websites, or automation systems. Fast delivery, expert development, full support at affordable prices." />
+        <meta name="keywords" content="AI chatbot for business, prompt engineer services, AI website developer India, chatbot builder for WhatsApp, AI lead generation chatbot, contact BotVibex" />
         <link rel="canonical" href="https://botvibex.site/contact" />
-        <meta property="og:title" content="Hire AI Chatbot Developer | BotVibex Services" />
-        <meta property="og:description" content="Get your custom AI chatbot, website, or automation system from India's top AI builder." />
+        <meta property="og:title" content="Contact BotVibex | AI Chatbot & Website Development" />
+        <meta property="og:description" content="Get in touch for custom AI chatbots, websites, or automation systems." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://botvibex.site/contact" />
         <meta property="og:image" content="https://botvibex.site/lovable-uploads/6ba6d661-5373-409c-9438-5b040793448e.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Hire AI Chatbot Developer | BotVibex Services" />
-        <meta name="twitter:description" content="Get your custom AI chatbot, website, or automation system from India's top AI builder." />
+        <meta name="twitter:title" content="Contact BotVibex | AI Chatbot & Website Development" />
+        <meta name="twitter:description" content="Get in touch for custom AI chatbots, websites, or automation systems." />
         <meta name="twitter:image" content="https://botvibex.site/lovable-uploads/6ba6d661-5373-409c-9438-5b040793448e.png" />
-        <script type="application/ld+json">{`
-          {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "BotVibex AI Development Services",
-            "description": "Custom AI chatbot development and website creation services",
-            "provider": {
-              "@type": "Organization",
-              "name": "BotVibex",
-              "email": "vibeswithbilal050@gmail.com"
-            },
-            "serviceType": "AI Development",
-            "areaServed": "Worldwide"
-          }
-        `}</script>
         <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
@@ -56,7 +41,8 @@ const Contact: React.FC = () => {
                 "@type": "ContactPoint",
                 "contactType": "customer service",
                 "email": "vibeswithbilal050@gmail.com",
-                "areaServed": "Worldwide"
+                "areaServed": "Worldwide",
+                "availableLanguage": ["English", "Hindi"]
               }
             }
           }
@@ -64,7 +50,7 @@ const Contact: React.FC = () => {
       </Helmet>
       
       <Navbar />
-      <div className="pt-24">
+      <main className="pt-24">
         <div className="container mx-auto px-6 mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-center text-gradient mb-4">
             Get Your Custom AI Solution
@@ -77,7 +63,7 @@ const Contact: React.FC = () => {
             <div className="w-full lg:w-1/3">
               <div className="glass-card p-6 space-y-8">
                 <div>
-                  <h3 className="text-neon-blue neon-text text-xl font-medium mb-3">Contact Information</h3>
+                  <h2 className="text-neon-blue neon-text text-xl font-medium mb-3">Contact Information</h2>
                   <p className="text-white/70 mb-4">
                     Have questions about our services? Reach out to us using any of the following methods:
                   </p>
@@ -136,20 +122,20 @@ const Contact: React.FC = () => {
             </div>
             
             <div className="w-full lg:w-2/3">
-              <ImprovedContactForm />
+              <SmartContactForm />
             </div>
           </div>
         </div>
         
         <TrustSecuritySection />
-      </div>
+      </main>
       <Footer />
       <OrderFormPopup />
       
       {/* Floating Action Buttons */}
       <div className="fixed right-6 bottom-24 z-50">
         <Button className="rounded-full w-14 h-14 bg-neon-purple text-white hover:bg-neon-purple/80 shadow-lg shadow-neon-purple/30 flex items-center justify-center p-0 animate-pulse">
-          <MessageCircle className="w-6 h-6" />
+          <MessageCircle className="w-6 h-6" aria-label="Chat with us" />
         </Button>
       </div>
       

@@ -19,17 +19,17 @@ const Index: React.FC = () => {
   return (
     <div className="min-h-screen tech-bg">
       <Helmet>
-        <title>BotVibex | AI Chatbot & Web Solutions</title>
+        <title>BotVibex | AI Chatbot & Web Development Solutions</title>
         <meta name="description" content="Expert AI chatbot development and professional website creation services by BotVibex. Get custom AI solutions starting at just ₹499." />
         <meta name="keywords" content="AI chatbot development, AI website development, prompt engineering, custom AI chatbots, AI chatbot solutions, AI website builder" />
         <link rel="canonical" href="https://botvibex.site" />
-        <meta property="og:title" content="BotVibex | AI Chatbot & Web Solutions" />
+        <meta property="og:title" content="BotVibex | AI Chatbot & Web Development Solutions" />
         <meta property="og:description" content="Expert AI chatbot development and website creation services starting at ₹499" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://botvibex.site" />
         <meta property="og:image" content="https://botvibex.site/lovable-uploads/6ba6d661-5373-409c-9438-5b040793448e.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="BotVibex | AI Chatbot & Web Solutions" />
+        <meta name="twitter:title" content="BotVibex | AI Chatbot & Web Development Solutions" />
         <meta name="twitter:description" content="Expert AI chatbot development and website creation services starting at ₹499" />
         <meta name="twitter:image" content="https://botvibex.site/lovable-uploads/6ba6d661-5373-409c-9438-5b040793448e.png" />
         <script type="application/ld+json">{`
@@ -61,14 +61,19 @@ const Index: React.FC = () => {
         <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "BotVibex",
-            "image": "https://botvibex.site/lovable-uploads/6ba6d661-5373-409c-9438-5b040793448e.png",
-            "url": "https://botvibex.site",
-            "description": "AI chatbot and website development services",
-            "priceRange": "₹499 - ₹10,000+",
-            "openingHours": "Mo-Fr 10:00-18:00",
-            "email": "vibeswithbilal050@gmail.com"
+            "@type": "Service",
+            "serviceType": "AI Development Services",
+            "provider": {
+              "@type": "Organization",
+              "name": "BotVibex"
+            },
+            "areaServed": "Worldwide",
+            "offers": {
+              "@type": "Offer",
+              "price": "499",
+              "priceCurrency": "INR"
+            },
+            "description": "Custom AI chatbot development and website creation services designed to boost business productivity and customer engagement."
           }
         `}</script>
       </Helmet>
@@ -79,12 +84,14 @@ const Index: React.FC = () => {
       {/* Main Content */}
       <div className="relative z-10">
         <Navbar />
-        <HeroSection />
-        <BenefitsSection />
-        <BlogHighlightsSection />
-        <ClientBadgesSection />
-        <TestimonialsSection />
-        <ContactFormSection />
+        <main>
+          <HeroSection />
+          <BenefitsSection />
+          <BlogHighlightsSection />
+          <ClientBadgesSection />
+          <TestimonialsSection />
+          <ContactFormSection />
+        </main>
         <Footer />
         <ChatBot />
         <OrderFormPopup />

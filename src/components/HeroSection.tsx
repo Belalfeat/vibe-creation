@@ -37,6 +37,9 @@ const HeroSection: React.FC = () => {
                 src="/lovable-uploads/6ba6d661-5373-409c-9438-5b040793448e.png" 
                 alt="BotVibex - AI Chatbot & Website Development Company" 
                 className="h-24 w-auto relative z-10 company-logo"
+                width="96"
+                height="96"
+                loading="eager"
               />
             </div>
           </div>
@@ -50,7 +53,14 @@ const HeroSection: React.FC = () => {
             Instant response, 24/7 automation, and powerful customer experience
           </p>
           
-          <p className="text-lg md:text-xl text-neon-blue/80 max-w-2xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-4 items-center">
+            <span className="text-lg md:text-xl text-neon-blue/80 py-1 px-3 border border-neon-blue/30 rounded-full">Fast AI Chatbot Setup</span>
+            <span className="text-lg md:text-xl text-neon-blue/80 py-1 px-3 border border-neon-blue/30 rounded-full">Custom Built</span>
+            <span className="text-lg md:text-xl text-neon-blue/80 py-1 px-3 border border-neon-blue/30 rounded-full">Instant Prompt Response</span>
+            <span className="text-lg md:text-xl text-neon-blue/80 py-1 px-3 border border-neon-blue/30 rounded-full">No Code Needed</span>
+          </div>
+          
+          <p className="text-lg md:text-xl text-neon-blue/80 max-w-2xl mx-auto mt-4">
             Affordable AI solutions starting at just ₹499
           </p>
           
@@ -81,7 +91,7 @@ const HeroSection: React.FC = () => {
         <div className="mouse">
           <div className="wheel"></div>
         </div>
-        <ChevronDown className="text-white/50 animate-bounce" size={20} />
+        <ChevronDown className="text-white/50 animate-bounce" size={20} aria-label="Scroll down" />
       </div>
       
       {/* Grid Overlay */}
@@ -91,6 +101,7 @@ const HeroSection: React.FC = () => {
           backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2300eeff' fill-opacity='0.2'%3E%3Cpath d='M0 0h50v50H0V0zm50 50h50v50H50V50z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
           backgroundSize: "60px 60px"
         }}
+        aria-hidden="true"
       />
     </section>
   );
