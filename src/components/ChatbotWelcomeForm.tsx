@@ -1,316 +1,307 @@
 
 import React, { useState } from 'react';
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
+import { Check, ArrowRight, AlertTriangle } from 'lucide-react'; 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
-import { 
-  Form, 
-  FormControl, 
-  FormField, 
-  FormItem, 
-  FormLabel, 
-  FormMessage 
-} from "@/components/ui/form";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useToast } from '@/hooks/use-toast';
-import { MessageSquare, User, Mail, Globe, Briefcase, Bot, Sparkles, Send } from 'lucide-react';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-  DialogFooter,
-} from '@/components/ui/dialog';
+import { useToast } from "@/components/ui/use-toast";
 
-const formSchema = z.object({
-  name: z.string().min(2, { 
-    message: "Please enter your full name (at least 2 characters)." 
-  }),
-  email: z.string().email({ 
-    message: "Please enter a valid email address." 
-  }),
-  website: z.string().url({ 
-    message: "Please enter a valid website URL (include http:// or https://)." 
-  }).or(z.string().min(5, { 
-    message: "Please provide your website or business link." 
-  })),
-  businessDescription: z.string().min(10, { 
-    message: "Please tell us a bit about your business (at least 10 characters)." 
-  }),
-  chatbotExpectation: z.string().min(5, { 
-    message: "Please tell us what you expect from your chatbot." 
-  }),
-  specialFeatures: z.string().optional(),
-  terms: z.boolean().refine(val => val === true, {
-    message: "You must accept the terms and conditions to proceed.",
-  }),
-});
-
-type FormValues = z.infer<typeof formSchema>;
-
-const ChatbotWelcomeForm: React.FC = () => {
+const ChatbotWelcomeForm = () => {
   const { toast } = useToast();
-  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      website: "",
-      businessDescription: "",
-      chatbotExpectation: "",
-      specialFeatures: "",
-      terms: false
-    },
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    website: '',
+    businessInfo: '',
+    expectations: '',
+    features: '',
   });
+  const [termsAccepted, setTermsAccepted] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitting, setSubmitting] = useState(false);
+  const [success, setSuccess] = useState(false);
 
-  const onSubmit = (data: FormValues) => {
-    setIsSubmitting(true);
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
     
-    // Simulate form submission
+    if (!formData.fullName.trim()) {
+      newErrors.fullName = 'Name is required';
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Email is invalid';
+    }
+    
+    if (!formData.website.trim()) {
+      newErrors.website = 'Website URL is required';
+    }
+    
+    if (!formData.businessInfo.trim()) {
+      newErrors.businessInfo = 'Business information is required';
+    }
+    
+    if (!formData.expectations.trim()) {
+      newErrors.expectations = 'Chatbot expectations are required';
+    }
+    
+    if (!termsAccepted) {
+      newErrors.terms = 'You must accept the terms and conditions';
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+    
+    // Clear error when user types
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Please fix the errors in the form before submitting.",
+      });
+      return;
+    }
+    
+    setSubmitting(true);
+    
+    // Simulate API call
     setTimeout(() => {
-      console.log('Chatbot welcome form submitted:', data);
-      setIsSubmitting(false);
-      setShowSuccessDialog(true);
-      form.reset();
+      setSubmitting(false);
+      setSuccess(true);
+      
+      toast({
+        title: "Success!",
+        description: "Your information has been submitted. We'll get back to you soon!",
+      });
+      
+      // Reset form
+      setFormData({
+        fullName: '',
+        email: '',
+        website: '',
+        businessInfo: '',
+        expectations: '',
+        features: '',
+      });
+      setTermsAccepted(false);
     }, 1500);
   };
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-12">
-      <div className="glass-card border-2 border-neon-blue/30 p-6 md:p-8 rounded-xl relative overflow-hidden">
-        {/* Glassmorphism background effects */}
-        <div className="absolute -top-24 -right-24 w-64 h-64 bg-neon-blue/10 rounded-full blur-3xl -z-10"></div>
-        <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-neon-purple/10 rounded-full blur-3xl -z-10"></div>
-        
-        <div className="text-center mb-8">
-          <div className="flex items-center justify-center mb-3">
-            <MessageSquare className="h-8 w-8 text-neon-blue mr-2" />
-            <h1 className="text-2xl md:text-3xl font-bold text-gradient">
-              Welcome to Lovable!
-            </h1>
-          </div>
-          <p className="text-white/70">
-            Where smart businesses meet smart bots. Let's get your custom AI chatbot set up!
-          </p>
+    <div className="container mx-auto px-4 md:px-6 py-8">
+      <div className="max-w-3xl mx-auto">
+        <div className="glass-card p-6 md:p-8 rounded-xl border border-neon-blue/30">
+          {!success ? (
+            <>
+              <div className="text-center mb-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-gradient mb-2">Welcome to Lovable</h2>
+                <p className="text-white/70">Where smart businesses meet smart bots</p>
+                <div className="h-1 w-20 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto mt-4"></div>
+              </div>
+              
+              <p className="text-white/80 text-center mb-8">
+                Before we get started, we just need a few quick details to give you the <span className="text-neon-blue">best</span> experience with your custom AI chatbot.
+              </p>
+              
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label htmlFor="fullName" className="block text-white font-medium mb-1">
+                    1. What's your name, boss?
+                  </label>
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    placeholder="Your Full Name"
+                    className={`w-full px-4 py-3 rounded-md bg-white/10 border ${errors.fullName ? 'border-red-500' : 'border-white/20'} focus:border-neon-blue/70 text-white outline-none transition-colors`}
+                  />
+                  {errors.fullName && (
+                    <p className="mt-1 text-red-500 flex items-center text-sm">
+                      <AlertTriangle className="w-4 h-4 mr-1" />
+                      {errors.fullName}
+                    </p>
+                  )}
+                </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-white font-medium mb-1">
+                    2. How can we reach you?
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Your Email Address"
+                    className={`w-full px-4 py-3 rounded-md bg-white/10 border ${errors.email ? 'border-red-500' : 'border-white/20'} focus:border-neon-blue/70 text-white outline-none transition-colors`}
+                  />
+                  {errors.email && (
+                    <p className="mt-1 text-red-500 flex items-center text-sm">
+                      <AlertTriangle className="w-4 h-4 mr-1" />
+                      {errors.email}
+                    </p>
+                  )}
+                </div>
+                
+                <div>
+                  <label htmlFor="website" className="block text-white font-medium mb-1">
+                    3. Where should your chatbot live?
+                  </label>
+                  <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    value={formData.website}
+                    onChange={handleChange}
+                    placeholder="Your Website URL / Business Link"
+                    className={`w-full px-4 py-3 rounded-md bg-white/10 border ${errors.website ? 'border-red-500' : 'border-white/20'} focus:border-neon-blue/70 text-white outline-none transition-colors`}
+                  />
+                  {errors.website && (
+                    <p className="mt-1 text-red-500 flex items-center text-sm">
+                      <AlertTriangle className="w-4 h-4 mr-1" />
+                      {errors.website}
+                    </p>
+                  )}
+                </div>
+                
+                <div>
+                  <label htmlFor="businessInfo" className="block text-white font-medium mb-1">
+                    4. What's your business about?
+                  </label>
+                  <textarea
+                    id="businessInfo"
+                    name="businessInfo"
+                    value={formData.businessInfo}
+                    onChange={handleChange}
+                    placeholder="Write about your niche, product, or service in 2–3 lines"
+                    rows={3}
+                    className={`w-full px-4 py-3 rounded-md bg-white/10 border ${errors.businessInfo ? 'border-red-500' : 'border-white/20'} focus:border-neon-blue/70 text-white outline-none transition-colors resize-none`}
+                  ></textarea>
+                  {errors.businessInfo && (
+                    <p className="mt-1 text-red-500 flex items-center text-sm">
+                      <AlertTriangle className="w-4 h-4 mr-1" />
+                      {errors.businessInfo}
+                    </p>
+                  )}
+                </div>
+                
+                <div>
+                  <label htmlFor="expectations" className="block text-white font-medium mb-1">
+                    5. What do you expect from your chatbot?
+                  </label>
+                  <input
+                    type="text"
+                    id="expectations"
+                    name="expectations"
+                    value={formData.expectations}
+                    onChange={handleChange}
+                    placeholder="e.g., customer support, lead generation, 24/7 help, fast replies, FAQs, etc."
+                    className={`w-full px-4 py-3 rounded-md bg-white/10 border ${errors.expectations ? 'border-red-500' : 'border-white/20'} focus:border-neon-blue/70 text-white outline-none transition-colors`}
+                  />
+                  {errors.expectations && (
+                    <p className="mt-1 text-red-500 flex items-center text-sm">
+                      <AlertTriangle className="w-4 h-4 mr-1" />
+                      {errors.expectations}
+                    </p>
+                  )}
+                </div>
+                
+                <div>
+                  <label htmlFor="features" className="block text-white font-medium mb-1">
+                    6. Any special features you want?
+                  </label>
+                  <input
+                    type="text"
+                    id="features"
+                    name="features"
+                    value={formData.features}
+                    onChange={handleChange}
+                    placeholder="e.g., WhatsApp integration, lead form, payment options, Google Sheets, analytics, etc."
+                    className={`w-full px-4 py-3 rounded-md bg-white/10 border border-white/20 focus:border-neon-blue/70 text-white outline-none transition-colors`}
+                  />
+                </div>
+                
+                <div className="pt-2">
+                  <div className={`flex items-start ${errors.terms ? 'border border-red-500 p-3 rounded-md' : ''}`}>
+                    <div className="flex items-center h-5">
+                      <input
+                        id="terms"
+                        type="checkbox"
+                        checked={termsAccepted}
+                        onChange={() => setTermsAccepted(!termsAccepted)}
+                        className="h-5 w-5 rounded border-2 border-white/30 text-neon-blue focus:ring-neon-blue focus:ring-offset-black"
+                      />
+                    </div>
+                    <label htmlFor="terms" className="ml-3 text-sm text-white/80">
+                      I accept Lovable's Terms and Conditions and agree to receive AI updates, tools, and business tips.
+                    </label>
+                  </div>
+                  {errors.terms && (
+                    <p className="mt-1 text-red-500 flex items-center text-sm">
+                      <AlertTriangle className="w-4 h-4 mr-1" />
+                      {errors.terms}
+                    </p>
+                  )}
+                </div>
+                
+                <div className="pt-4">
+                  <Button 
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-neon-blue to-neon-purple text-white py-6 rounded-md hover:opacity-90 transition-opacity flex items-center justify-center space-x-2"
+                    disabled={submitting}
+                  >
+                    <span>{submitting ? 'Submitting...' : 'Submit'}</span>
+                    {!submitting && <ArrowRight className="w-5 h-5" />}
+                  </Button>
+                </div>
+              </form>
+              
+              <div className="mt-8 text-center text-white/60 text-sm">
+                <p>Need help right now? Chat with our assistant on the bottom right or email:</p>
+                <a href="mailto:vibeswithbilal050@gmail.com" className="text-neon-blue hover:underline">vibeswithbilal050@gmail.com</a>
+              </div>
+            </>
+          ) : (
+            <div className="text-center py-12">
+              <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-6">
+                <Check className="w-8 h-8 text-green-500" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Thank You!</h2>
+              <p className="text-white/80 mb-6">
+                Your submission has been received. We'll contact you within 24 hours with the next steps to setup your AI chatbot.
+              </p>
+              <p className="text-neon-blue">
+                Check your email for a confirmation message from our team.
+              </p>
+            </div>
+          )}
         </div>
         
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
-            {/* Name Field */}
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="flex items-center gap-2 text-white">
-                    <User className="h-4 w-4 text-neon-blue" />
-                    <span>1. What's your name, boss?</span>
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Your Full Name"
-                      className="bg-white/10 border-white/20 focus:border-neon-blue/70 text-white placeholder:text-white/50"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage className="text-red-400" />
-                </FormItem>
-              )}
-            />
-            
-            {/* Email Field */}
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="flex items-center gap-2 text-white">
-                    <Mail className="h-4 w-4 text-neon-blue" />
-                    <span>2. How can we reach you?</span>
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Your Email Address"
-                      className="bg-white/10 border-white/20 focus:border-neon-blue/70 text-white placeholder:text-white/50"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage className="text-red-400" />
-                </FormItem>
-              )}
-            />
-            
-            {/* Website URL Field */}
-            <FormField
-              control={form.control}
-              name="website"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="flex items-center gap-2 text-white">
-                    <Globe className="h-4 w-4 text-neon-blue" />
-                    <span>3. Where should your chatbot live?</span>
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Your Website URL / Business Link"
-                      className="bg-white/10 border-white/20 focus:border-neon-blue/70 text-white placeholder:text-white/50"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage className="text-red-400" />
-                </FormItem>
-              )}
-            />
-            
-            {/* Business Description Field */}
-            <FormField
-              control={form.control}
-              name="businessDescription"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="flex items-center gap-2 text-white">
-                    <Briefcase className="h-4 w-4 text-neon-blue" />
-                    <span>4. What's your business about?</span>
-                  </FormLabel>
-                  <FormControl>
-                    <Textarea
-                      placeholder="Write about your niche, product, or service in 2–3 lines"
-                      className="bg-white/10 border-white/20 focus:border-neon-blue/70 text-white placeholder:text-white/50 min-h-[100px]"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage className="text-red-400" />
-                </FormItem>
-              )}
-            />
-            
-            {/* Chatbot Expectation Field */}
-            <FormField
-              control={form.control}
-              name="chatbotExpectation"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="flex items-center gap-2 text-white">
-                    <Bot className="h-4 w-4 text-neon-blue" />
-                    <span>5. What do you expect from your chatbot?</span>
-                  </FormLabel>
-                  <FormControl>
-                    <Textarea
-                      placeholder="(e.g., customer support, lead generation, 24/7 help, fast replies, FAQs, etc.)"
-                      className="bg-white/10 border-white/20 focus:border-neon-blue/70 text-white placeholder:text-white/50"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage className="text-red-400" />
-                </FormItem>
-              )}
-            />
-            
-            {/* Special Features Field */}
-            <FormField
-              control={form.control}
-              name="specialFeatures"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="flex items-center gap-2 text-white">
-                    <Sparkles className="h-4 w-4 text-neon-blue" />
-                    <span>6. Any special features you want?</span>
-                  </FormLabel>
-                  <FormControl>
-                    <Textarea
-                      placeholder="(e.g., WhatsApp integration, lead form, payment options, Google Sheets, analytics, etc.)"
-                      className="bg-white/10 border-white/20 focus:border-neon-blue/70 text-white placeholder:text-white/50"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage className="text-red-400" />
-                </FormItem>
-              )}
-            />
-            
-            {/* Terms and Conditions */}
-            <div className="pt-2 border-t border-white/10">
-              <FormField
-                control={form.control}
-                name="terms"
-                render={({ field }) => (
-                  <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                    <FormControl>
-                      <Checkbox 
-                        checked={field.value} 
-                        onCheckedChange={field.onChange}
-                        className="data-[state=checked]:bg-neon-blue"
-                      />
-                    </FormControl>
-                    <div className="space-y-1 leading-none">
-                      <FormLabel className="text-white/70 text-sm">
-                        I accept Lovable's Terms and Conditions and agree to receive AI updates, tools, and business tips.
-                      </FormLabel>
-                      <FormMessage className="text-red-400" />
-                    </div>
-                  </FormItem>
-                )}
-              />
-            </div>
-            
-            {/* Submit Button */}
-            <Button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full py-6 relative overflow-hidden group bg-gradient-to-r from-neon-blue to-neon-purple text-white font-medium rounded-md hover:opacity-90 transition-opacity"
-            >
-              <span className="absolute w-40 h-40 -mt-12 -ml-20 bg-white/20 rotate-45 -translate-x-full group-hover:translate-x-[300%] transition-all duration-1000"></span>
-              <span className="relative flex items-center justify-center gap-2">
-                {isSubmitting ? "Submitting..." : "Submit"}
-                <Send className="h-5 w-5" />
-              </span>
-            </Button>
-            
-            <div className="text-center text-white/60 text-sm pt-4">
-              Need help right now? Chat with our assistant on the bottom right or email:{" "}
-              <a href="mailto:vibeswithbilal050@gmail.com" className="text-neon-blue">vibeswithbilal050@gmail.com</a>
-            </div>
-            
-            <div className="text-center text-white/60 text-xs">
-              Lovable by BotVibex – Smarter Business Starts Here.
-            </div>
-          </form>
-        </Form>
+        <div className="text-center mt-8">
+          <p className="text-white/60 text-sm font-medium">Lovable by BotVibex – Smarter Business Starts Here.</p>
+        </div>
       </div>
-      
-      {/* Success Dialog */}
-      <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
-        <DialogContent className="glass-card border-none bg-gradient-to-b from-black/90 to-[#0a001f] text-white">
-          <DialogHeader>
-            <DialogTitle className="text-xl font-bold text-gradient">Thank You!</DialogTitle>
-          </DialogHeader>
-          
-          <div className="py-4 text-center">
-            <div className="w-16 h-16 mx-auto bg-green-500/20 rounded-full flex items-center justify-center mb-4">
-              <Check className="h-8 w-8 text-green-400" />
-            </div>
-            <p className="text-white text-lg mb-2">Your AI journey begins!</p>
-            <p className="text-white/70">You'll get a confirmation email within 24 hours from our expert team.</p>
-          </div>
-          
-          <DialogFooter>
-            <Button 
-              onClick={() => setShowSuccessDialog(false)}
-              className="bg-gradient-to-r from-neon-blue to-neon-purple text-white hover:opacity-90 w-full"
-            >
-              Close
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 };
