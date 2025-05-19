@@ -3,7 +3,6 @@ import React, { useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from 'lucide-react';
 import GlowingOrb from './GlowingOrb';
-import { Link } from 'react-router-dom';
 
 const HeroSection: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -32,20 +31,23 @@ const HeroSection: React.FC = () => {
       <div className="container mx-auto px-6 z-20 text-center">
         <div className="space-y-6 animate-fade-in">
           <div className="flex justify-center mb-6">
-            <img 
-              src="/lovable-uploads/6ba6d661-5373-409c-9438-5b040793448e.png" 
-              alt="BotVibex - AI Chatbot & Website Development Company" 
-              className="h-24 w-auto company-logo"
-            />
+            <div className="relative">
+              <div className="absolute inset-0 bg-neon-blue/30 blur-xl rounded-full animate-pulse"></div>
+              <img 
+                src="/lovable-uploads/6ba6d661-5373-409c-9438-5b040793448e.png" 
+                alt="BotVibex - AI Chatbot & Website Development Company" 
+                className="h-24 w-auto relative z-10 company-logo"
+              />
+            </div>
           </div>
           
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gradient tracking-tight leading-tight">
-            <span className="block">BotVibex</span>
-            <span className="text-xl md:text-2xl block mt-2 text-white/80">AI CHATBOT & WEBSITE DEVELOPMENT</span>
+            <span className="block">Boost Your Business with</span>
+            <span className="block">AI Chatbots & Smart Websites</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto mb-4">
-            Transform your business with custom AI chatbots and responsive websites
+            Instant response, 24/7 automation, and powerful customer experience
           </p>
           
           <p className="text-lg md:text-xl text-neon-blue/80 max-w-2xl mx-auto">
@@ -55,29 +57,18 @@ const HeroSection: React.FC = () => {
           <div className="mt-8 flex flex-col md:flex-row items-center justify-center gap-8">
             <GlowingOrb />
             
-            <div className="flex flex-col md:flex-row gap-4">
-              <Button 
-                onClick={handleOrderClick}
-                className="bg-transparent border border-neon-blue text-neon-blue hover:bg-neon-blue/20 px-6 py-6 text-lg rounded-md transition-all duration-300 animate-glow neon-border hover:scale-105 transform"
-                aria-label="Get your custom AI solution today"
-              >
-                Get Your Custom AI Solution Today
-              </Button>
-              
-              <Link to="/blog">
-                <Button 
-                  className="bg-transparent border border-neon-purple text-neon-purple hover:bg-neon-purple/20 px-6 py-6 text-lg rounded-md transition-all duration-300 animate-glow neon-border-purple hover:scale-105 transform"
-                  aria-label="Read our latest blog posts about AI technology"
-                >
-                  Read Our Latest Blog
-                </Button>
-              </Link>
-            </div>
+            <Button 
+              onClick={handleOrderClick}
+              className="bg-transparent border border-neon-blue text-neon-blue hover:bg-neon-blue/20 px-10 py-6 text-lg rounded-md transition-all duration-300 animate-glow neon-border hover:scale-105 transform"
+              aria-label="Get your custom AI solution today"
+            >
+              Start Now - Get Your AI Bot
+            </Button>
           </div>
           
           <div className="mt-8">
             <p className="text-white/60 text-sm">Serving clients worldwide with advanced AI solutions</p>
-            <div className="flex justify-center gap-4 mt-2">
+            <div className="flex flex-wrap justify-center gap-4 mt-2">
               <span className="text-white/80 text-sm">✓ Secure Payment</span>
               <span className="text-white/80 text-sm">✓ 24/7 Support</span>
               <span className="text-white/80 text-sm">✓ 100% Satisfaction</span>

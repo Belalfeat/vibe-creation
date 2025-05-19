@@ -36,7 +36,19 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <Link to="/" className="text-xl font-bold text-gradient">DIGITAL<span className="text-neon-blue">CREATOR</span></Link>
+            <Link to="/" className="flex items-center">
+              <div className="mr-3">
+                <img 
+                  src="/lovable-uploads/6ba6d661-5373-409c-9438-5b040793448e.png" 
+                  alt="BotVibex Logo" 
+                  className="h-12 w-12 object-contain"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xl font-bold text-gradient">BotVibex</span>
+                <span className="text-xs text-white/80">AI Solutions for the Future</span>
+              </div>
+            </Link>
           </div>
           
           {/* Desktop Menu */}
@@ -71,11 +83,17 @@ const Navbar: React.FC = () => {
             >
               Contact
             </Link>
+            <Link 
+              to="/blog" 
+              className={`text-white hover:text-neon-blue transition-colors duration-300 ${isActive('/blog') && 'text-neon-blue'}`}
+            >
+              Blog
+            </Link>
             <button 
               onClick={handleOrderClick} 
               className="bg-transparent border border-neon-blue text-neon-blue hover:bg-neon-blue/10 px-4 py-2 rounded-md transition-all duration-300 neon-border"
             >
-              Order Now
+              Start Now
             </button>
           </div>
           
@@ -96,11 +114,12 @@ const Navbar: React.FC = () => {
           <Link to="/services" onClick={() => setIsMenuOpen(false)} className="text-white text-xl hover:text-neon-blue transition-colors duration-300">Services</Link>
           <Link to="/portfolio" onClick={() => setIsMenuOpen(false)} className="text-white text-xl hover:text-neon-blue transition-colors duration-300">Portfolio</Link>
           <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="text-white text-xl hover:text-neon-blue transition-colors duration-300">Contact</Link>
+          <Link to="/blog" onClick={() => setIsMenuOpen(false)} className="text-white text-xl hover:text-neon-blue transition-colors duration-300">Blog</Link>
           <button 
             onClick={handleOrderClick} 
             className="bg-transparent border border-neon-blue text-neon-blue hover:bg-neon-blue/10 px-6 py-3 rounded-md transition-all duration-300 mt-4 neon-border"
           >
-            Order Now
+            Start Now
           </button>
         </div>
       </div>

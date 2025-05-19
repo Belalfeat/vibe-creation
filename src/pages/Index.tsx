@@ -2,21 +2,18 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
-import AboutSection from '../components/AboutSection';
-import ServicesSection from '../components/ServicesSection';
-import PortfolioSection from '../components/PortfolioSection';
-import SkillHighlightsSection from '../components/SkillHighlightsSection';
-import TrustSecuritySection from '../components/TrustSecuritySection';
+import BenefitsSection from '../components/BenefitsSection';
+import BlogHighlightsSection from '../components/BlogHighlightsSection';
+import ContactFormSection from '../components/ContactFormSection';
+import ClientBadgesSection from '../components/ClientBadgesSection';
+import TestimonialsSection from '../components/TestimonialsSection';
 import Footer from '../components/Footer';
 import ChatBot from '../components/ChatBot';
-import DiscountBanner from '../components/DiscountBanner';
 import OrderFormPopup from '../components/OrderFormPopup';
 import WelcomePopup from '../components/WelcomePopup';
-import CertificateSection from '../components/CertificateSection';
-import BrandSection from '../components/BrandSection';
+import { Helmet } from 'react-helmet-async';
 import CodeRainAnimation from '../components/CodeRainAnimation';
 import FloatingCodeBlocks from '../components/FloatingCodeBlocks';
-import { Helmet } from 'react-helmet-async';
 
 const Index: React.FC = () => {
   return (
@@ -82,15 +79,12 @@ const Index: React.FC = () => {
       {/* Main Content */}
       <div className="relative z-10">
         <Navbar />
-        <DiscountBanner />
         <HeroSection />
-        <AboutSection />
-        <BrandSection />
-        <ServicesSection />
-        <SkillHighlightsSection />
-        <CertificateSection />
-        <PortfolioSection />
-        <TrustSecuritySection />
+        <BenefitsSection />
+        <BlogHighlightsSection />
+        <ClientBadgesSection />
+        <TestimonialsSection />
+        <ContactFormSection />
         <Footer />
         <ChatBot />
         <OrderFormPopup />

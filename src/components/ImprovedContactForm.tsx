@@ -41,6 +41,7 @@ import {
   DialogFooter,
 } from '@/components/ui/dialog';
 
+// Define the form schema with proper type for terms field
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters long." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -48,8 +49,8 @@ const formSchema = z.object({
   service: z.string({ required_error: "Please select a service type." }),
   message: z.string().min(10, { message: "Please provide at least 10 characters about your project." }),
   deadline: z.date().optional(),
-  terms: z.literal(true, {
-    errorMap: () => ({ message: "You must accept the terms and conditions." }),
+  terms: z.boolean().refine(val => val === true, {
+    message: "You must accept the terms and conditions.",
   }),
 });
 
