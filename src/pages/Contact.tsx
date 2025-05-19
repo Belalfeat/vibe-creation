@@ -2,7 +2,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import AdvancedContactForm from '../components/AdvancedContactForm';
+import ImprovedContactForm from '../components/ImprovedContactForm';
 import OrderFormPopup from '../components/OrderFormPopup';
 import TrustSecuritySection from '../components/TrustSecuritySection';
 import { Helmet } from 'react-helmet-async';
@@ -136,7 +136,7 @@ const Contact: React.FC = () => {
             </div>
             
             <div className="w-full lg:w-2/3">
-              <AdvancedContactForm />
+              <ImprovedContactForm />
             </div>
           </div>
         </div>

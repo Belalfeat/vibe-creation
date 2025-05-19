@@ -22,17 +22,17 @@ const Index: React.FC = () => {
   return (
     <div className="min-h-screen tech-bg">
       <Helmet>
-        <title>BotVibex: AI Chatbot & Website Development | ₹499 Special Offer</title>
-        <meta name="description" content="Expert AI chatbot development and professional website creation services by BotVibex. Get custom AI solutions starting at just ₹499. Contact us today for prompt engineering services!" />
-        <meta name="keywords" content="AI chatbot development, AI website development, prompt engineering, custom AI chatbots, AI chatbot solutions, AI website builder, AI development services" />
+        <title>BotVibex | AI Chatbot & Web Solutions</title>
+        <meta name="description" content="Expert AI chatbot development and professional website creation services by BotVibex. Get custom AI solutions starting at just ₹499." />
+        <meta name="keywords" content="AI chatbot development, AI website development, prompt engineering, custom AI chatbots, AI chatbot solutions, AI website builder" />
         <link rel="canonical" href="https://botvibex.site" />
-        <meta property="og:title" content="BotVibex: AI Chatbot & Website Development" />
+        <meta property="og:title" content="BotVibex | AI Chatbot & Web Solutions" />
         <meta property="og:description" content="Expert AI chatbot development and website creation services starting at ₹499" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://botvibex.site" />
         <meta property="og:image" content="https://botvibex.site/lovable-uploads/6ba6d661-5373-409c-9438-5b040793448e.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="BotVibex: AI Chatbot & Website Development" />
+        <meta name="twitter:title" content="BotVibex | AI Chatbot & Web Solutions" />
         <meta name="twitter:description" content="Expert AI chatbot development and website creation services starting at ₹499" />
         <meta name="twitter:image" content="https://botvibex.site/lovable-uploads/6ba6d661-5373-409c-9438-5b040793448e.png" />
         <script type="application/ld+json">{`

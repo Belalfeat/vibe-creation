@@ -2,7 +2,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import SmartContactForm from '../components/SmartContactForm';
+import ImprovedContactForm from '../components/ImprovedContactForm';
 import TrustSecuritySection from '../components/TrustSecuritySection';
 import DiscountBanner from '../components/DiscountBanner';
 import OrderFormPopup from '../components/OrderFormPopup';
@@ -13,17 +13,17 @@ const Order: React.FC = () => {
   return (
     <div className="min-h-screen tech-bg">
       <Helmet>
-        <title>Order AI Chatbot & Website Development Services | BotVibex</title>
+        <title>Order AI Chatbot & Website Development | BotVibex</title>
         <meta name="description" content="Order custom AI chatbot development starting at ₹499 or responsive website creation at ₹899. Get premium prompt engineering services with BotVibex." />
         <meta name="keywords" content="AI chatbot order, custom website development, prompt engineering services, hire AI developer, AI solutions pricing, AI chatbot for business" />
         <link rel="canonical" href="https://botvibex.site/order" />
-        <meta property="og:title" content="Order AI Chatbot & Website Development Services | BotVibex" />
+        <meta property="og:title" content="Order AI Chatbot & Website Development | BotVibex" />
         <meta property="og:description" content="Get started with custom AI solutions for your business today. Order AI chatbot development starting at ₹499." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://botvibex.site/order" />
         <meta property="og:image" content="https://botvibex.site/lovable-uploads/6ba6d661-5373-409c-9438-5b040793448e.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Order AI Chatbot & Website Development Services | BotVibex" />
+        <meta name="twitter:title" content="Order AI Chatbot & Website Development | BotVibex" />
         <meta name="twitter:description" content="Get started with custom AI solutions for your business today. Order AI chatbot development starting at ₹499." />
         <meta name="twitter:image" content="https://botvibex.site/lovable-uploads/6ba6d661-5373-409c-9438-5b040793448e.png" />
         <script type="application/ld+json">{`
@@ -149,7 +149,7 @@ const Order: React.FC = () => {
           
           <div className="max-w-4xl mx-auto mb-16">
             <h2 className="text-3xl font-bold text-center text-gradient mb-8">Place Your Custom Order</h2>
-            <SmartContactForm />
+            <ImprovedContactForm />
           </div>
         </div>
         <TrustSecuritySection />
