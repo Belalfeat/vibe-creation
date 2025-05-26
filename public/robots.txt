@@ -1,19 +1,40 @@
 
-# BotVibex - AI Chatbot & Website Development Company
+# BotVibex - AI Chatbot Developer Lucknow | Website Development UP India
 # https://botvibex.site
 
 User-agent: *
 Allow: /
 
-# Sitemap
+# Priority pages for crawling
+Allow: /about
+Allow: /services
+Allow: /portfolio
+Allow: /blog
+Allow: /contact
+Allow: /order
+Allow: /chatbot
+
+# Block unnecessary paths
+Disallow: /admin
+Disallow: /private
+Disallow: /api
+Disallow: /*.json$
+Disallow: /node_modules
+
+# Sitemap location
 Sitemap: https://botvibex.site/sitemap.xml
 
-# Allow these bots full access
+# Crawl delay for respectful crawling
+Crawl-delay: 1
+
+# Allow major search engine bots
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Yandexbot
 Allow: /
@@ -24,17 +45,19 @@ Allow: /
 User-agent: Slurp
 Allow: /
 
-# Social Media Bots
+# Social media crawlers
 User-agent: Twitterbot
 Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
 
-# Main sections
-Allow: /about
-Allow: /services
-Allow: /portfolio
-Allow: /blog
-Allow: /contact
-Allow: /order
+User-agent: LinkedInBot
+Allow: /
+
+# SEO tools
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: MJ12bot
+Allow: /

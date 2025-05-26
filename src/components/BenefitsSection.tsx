@@ -7,20 +7,20 @@ const BenefitsSection: React.FC = () => {
     {
       id: 1,
       icon: <MessageCircle className="h-12 w-12 text-neon-blue" />,
-      title: "24/7 Smart Support with AI Chatbots",
-      description: "Never miss a customer inquiry again. Our AI chatbots provide round-the-clock support, answer FAQs instantly, and collect leads while you sleep."
+      title: "24/7 AI Chatbot Solutions for Lucknow Businesses",
+      description: "Never miss a customer inquiry again. Our AI chatbots provide round-the-clock support for businesses in Lucknow, UP, answering FAQs instantly and collecting leads while you sleep."
     },
     {
       id: 2,
       icon: <Globe className="h-12 w-12 text-neon-purple" />,
-      title: "SEO-Optimized AI-Powered Websites",
-      description: "Rank higher on Google with our custom-built websites designed for maximum visibility, speed, and conversion. Built with the latest technology for best results."
+      title: "SEO-Optimized Website Development in UP",
+      description: "Rank higher on Google with our custom-built websites designed for maximum visibility in Lucknow and across Uttar Pradesh. Built with latest technology for best results."
     },
     {
       id: 3,
       icon: <Zap className="h-12 w-12 text-neon-blue" />,
-      title: "Fast Prompt Response Systems for Instant Actions",
-      description: "Leverage cutting-edge prompt engineering to make your AI interactions more human-like, accurate, and effective at driving conversions."
+      title: "Expert Prompt Engineering Services India",
+      description: "Leverage cutting-edge prompt engineering from our Lucknow-based team to make your AI interactions more human-like, accurate, and effective at driving conversions."
     }
   ];
 
@@ -29,10 +29,10 @@ const BenefitsSection: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-4">
-            Elevate Your Business With AI
+            Why Choose BotVibex for AI Development in Lucknow?
           </h2>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto">
-            BotVibex is designed to help businesses automate support, save time, and improve client satisfaction.
+          <p className="text-lg text-white/70 max-w-3xl mx-auto">
+            BotVibex is Lucknow's premier AI chatbot development company, helping businesses across Uttar Pradesh automate support, save time, and improve client satisfaction with custom AI solutions.
           </p>
         </div>
         
@@ -58,8 +58,8 @@ const BenefitsSection: React.FC = () => {
         </div>
         
         <div className="mt-16 text-center">
-          <p className="text-lg text-white/80 max-w-3xl mx-auto">
-            Our solutions are designed for businesses of all sizes, from startups to enterprises. With BotVibex, you get cutting-edge AI technology without the enterprise-level price tag or technical complexity.
+          <p className="text-lg text-white/80 max-w-4xl mx-auto">
+            Our AI solutions are designed for businesses of all sizes across India, from Lucknow startups to UP enterprises. With BotVibex, you get cutting-edge AI technology without the enterprise-level price tag or technical complexity. We understand the local market in Uttar Pradesh and deliver solutions that work for Indian businesses.
           </p>
         </div>
       </div>
