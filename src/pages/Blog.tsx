@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -35,32 +34,32 @@ const Blog: React.FC = () => {
   const blogPosts = [
     {
       id: 1,
-      title: "Top 5 Ways AI Chatbots Are Transforming Online Business",
-      brief: "Discover how AI-powered chatbots are revolutionizing customer service with 24/7 availability, increasing conversion rates by up to 30%, reducing operational costs by 40%, and providing personalized experiences that boost customer satisfaction and loyalty scores across multiple industries.",
-      image: "https://images.unsplash.com/photo-1677608913670-909179c8a42f",
-      date: "May 19, 2025",
-      readTime: "6 min read",
+      title: "Why Every Lucknow Startup Needs an AI Chatbot in 2025: Complete Guide",
+      brief: "Discover how Lucknow startups are gaining competitive advantage with AI chatbots. From cost savings to 24/7 customer support in Hindi and English, learn why local businesses are embracing this technology and how to implement it effectively for maximum ROI in the UP market.",
+      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd",
+      date: "May 26, 2025",
+      readTime: "9 min read",
       author: "Bilal Ahmad",
-      tags: ["AI Chatbots", "Business Growth", "Customer Experience"],
-      slug: "top-ways-ai-chatbots-transforming-business",
+      tags: ["Lucknow Startups", "AI Chatbots", "Local Business"],
+      slug: "lucknow-startups-ai-chatbots-2025",
       featured: true
     },
     {
       id: 2,
-      title: "How Prompt Engineering is Making AI Smarter in 2025",
-      brief: "Explore the latest advancements in prompt engineering that are enabling more intelligent AI responses, including chain-of-thought prompting, few-shot learning techniques, and specialized prompt frameworks that produce up to 40% more accurate and contextually relevant results for businesses.",
-      image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485",
-      date: "May 17, 2025",
-      readTime: "8 min read",
+      title: "Website Development in Lucknow 2025: Complete Business Guide & Cost Analysis",
+      brief: "Comprehensive guide for Lucknow business owners covering website development costs (₹15K-₹5L), latest trends, industry-specific strategies for restaurants, healthcare, education, and real estate. Includes detailed pricing analysis, local market insights, and choosing the right development partner in UP.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+      date: "May 24, 2025",
+      readTime: "12 min read",
       author: "Bilal Ahmad",
-      tags: ["Prompt Engineering", "AI Development", "Machine Learning"],
-      slug: "prompt-engineering-making-ai-smarter",
+      tags: ["Lucknow Business", "Website Development", "Digital Marketing"],
+      slug: "lucknow-business-website-development-2025",
       featured: true
     },
     {
       id: 3,
       title: "Best No-Code Tools for AI Website Development in 2025",
-      brief: "Comprehensive comparison of the top no-code platforms that integrate AI capabilities for website development, featuring drag-and-drop interfaces, pre-built AI components, and seamless integration options that enable businesses to launch sophisticated websites without technical expertise.",
+      brief: "Comprehensive comparison of the top no-code platforms that integrate AI capabilities for website development, featuring Webflow, Framer, and Bubble. Learn about drag-and-drop interfaces, pre-built AI components, chatbot integration, and seamless deployment options that enable businesses to launch sophisticated websites without technical expertise.",
       image: "https://images.unsplash.com/photo-1633412802994-5c058f151b66",
       date: "May 15, 2025",
       readTime: "7 min read",
@@ -71,6 +70,28 @@ const Blog: React.FC = () => {
     },
     {
       id: 4,
+      title: "Top 5 Ways AI Chatbots Are Transforming Online Business",
+      brief: "Discover how AI-powered chatbots are revolutionizing customer service with 24/7 availability, increasing conversion rates by up to 30%, reducing operational costs by 40%, and providing personalized experiences that boost customer satisfaction and loyalty scores across multiple industries like e-commerce, healthcare, and finance.",
+      image: "https://images.unsplash.com/photo-1677608913670-909179c8a42f",
+      date: "May 19, 2025",
+      readTime: "6 min read",
+      author: "Bilal Ahmad",
+      tags: ["AI Chatbots", "Business Growth", "Customer Experience"],
+      slug: "top-ways-ai-chatbots-transforming-business"
+    },
+    {
+      id: 5,
+      title: "How Prompt Engineering is Making AI Smarter in 2025",
+      brief: "Explore the latest advancements in prompt engineering that are enabling more intelligent AI responses, including chain-of-thought prompting, few-shot learning techniques, and specialized prompt frameworks that produce up to 40% more accurate and contextually relevant results for businesses across industries.",
+      image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485",
+      date: "May 17, 2025",
+      readTime: "8 min read",
+      author: "Bilal Ahmad",
+      tags: ["Prompt Engineering", "AI Development", "Machine Learning"],
+      slug: "prompt-engineering-making-ai-smarter"
+    },
+    {
+      id: 6,
       title: "Top 5 Reasons Why AI Chatbots Are Essential for Modern Websites",
       brief: "AI chatbots have transformed from experimental tech into must-have website features. They improve user experience by providing instant responses, automating repetitive tasks, increasing conversion rates through proactive engagement, reducing support costs by handling routine inquiries, and gathering valuable customer data for business insights.",
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
@@ -81,7 +102,7 @@ const Blog: React.FC = () => {
       slug: "ai-chatbots-essential-modern-websites"
     },
     {
-      id: 5,
+      id: 7,
       title: "How AI Chatbots Can Increase Sales and Save Time for Your Business",
       brief: "Studies show businesses using AI chatbots see up to 30% increase in leads and 40% reduction in customer service costs. This article explores how chatbots handle customer support around the clock, qualify leads automatically, answer FAQs instantly, and deliver personalized product recommendations across industries like eCommerce, real estate, hospitality, and SaaS.",
       image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b",
@@ -92,7 +113,7 @@ const Blog: React.FC = () => {
       slug: "ai-chatbots-increase-sales-save-time"
     },
     {
-      id: 6,
+      id: 8,
       title: "Prompt Engineering: The Secret Skill Powering the Future of AI",
       brief: "Prompt engineering is the art and science of crafting effective instructions for AI systems to produce desired outputs. This deep dive explains the fundamentals, best practices, and advanced techniques that make the difference between mediocre and exceptional AI performance, especially for chatbots and automated content systems.",
       image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
@@ -136,25 +157,25 @@ const Blog: React.FC = () => {
             "blogPost": [
               {
                 "@type": "BlogPosting",
-                "headline": "Top 5 Ways AI Chatbots Are Transforming Online Business",
-                "datePublished": "2025-05-19",
+                "headline": "Why Every Lucknow Startup Needs an AI Chatbot in 2025: Complete Guide",
+                "datePublished": "2025-05-26",
                 "author": {
                   "@type": "Person",
                   "name": "Bilal Ahmad"
                 },
-                "image": "https://images.unsplash.com/photo-1677608913670-909179c8a42f",
-                "url": "https://botvibex.site/blog/top-ways-ai-chatbots-transforming-business"
+                "image": "https://images.unsplash.com/photo-1559136555-9303baea8ebd",
+                "url": "https://botvibex.site/blog/lucknow-startups-ai-chatbots-2025"
               },
               {
                 "@type": "BlogPosting",
-                "headline": "How Prompt Engineering is Making AI Smarter in 2025",
-                "datePublished": "2025-05-17",
+                "headline": "Website Development in Lucknow 2025: Complete Business Guide & Cost Analysis",
+                "datePublished": "2025-05-24",
                 "author": {
                   "@type": "Person",
                   "name": "Bilal Ahmad"
                 },
-                "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485",
-                "url": "https://botvibex.site/blog/prompt-engineering-making-ai-smarter"
+                "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+                "url": "https://botvibex.site/blog/lucknow-business-website-development-2025"
               },
               {
                 "@type": "BlogPosting",
@@ -166,39 +187,6 @@ const Blog: React.FC = () => {
                 },
                 "image": "https://images.unsplash.com/photo-1633412802994-5c058f151b66",
                 "url": "https://botvibex.site/blog/no-code-tools-ai-website-development"
-              },
-              {
-                "@type": "BlogPosting",
-                "headline": "Top 5 Reasons Why AI Chatbots Are Essential for Modern Websites",
-                "datePublished": "2025-05-10",
-                "author": {
-                  "@type": "Person",
-                  "name": "Bilal Ahmad"
-                },
-                "image": "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-                "url": "https://botvibex.site/blog/ai-chatbots-essential-modern-websites"
-              },
-              {
-                "@type": "BlogPosting",
-                "headline": "How AI Chatbots Can Increase Sales and Save Time for Your Business",
-                "datePublished": "2025-05-07",
-                "author": {
-                  "@type": "Person",
-                  "name": "Bilal Ahmad"
-                },
-                "image": "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b",
-                "url": "https://botvibex.site/blog/ai-chatbots-increase-sales-save-time"
-              },
-              {
-                "@type": "BlogPosting",
-                "headline": "Prompt Engineering: The Secret Skill Powering the Future of AI",
-                "datePublished": "2025-05-05",
-                "author": {
-                  "@type": "Person",
-                  "name": "Bilal Ahmad"
-                },
-                "image": "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-                "url": "https://botvibex.site/blog/prompt-engineering-secret-skill"
               }
             ]
           }
@@ -416,7 +404,7 @@ const Blog: React.FC = () => {
           <div className="glass-card p-8 rounded-xl max-w-4xl mx-auto border border-neon-blue/20">
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold text-gradient mb-4">Subscribe to Our Newsletter</h3>
-              <p className="text-white/70 max-w-2xl mx-auto">
+              <p className="text-white/70 max-w-2xl mx-auto mb-8">
                 Stay updated with the latest AI insights, tips, and trends. Be the first to know about new technologies that can help your business grow.
               </p>
             </div>

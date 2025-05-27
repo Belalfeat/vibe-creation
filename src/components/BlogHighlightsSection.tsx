@@ -7,30 +7,30 @@ const BlogHighlightsSection: React.FC = () => {
   const blogs = [
     {
       id: 1,
+      title: "Why Every Lucknow Startup Needs an AI Chatbot in 2025: Complete Guide",
+      brief: "Discover how Lucknow startups are gaining competitive advantage with AI chatbots. From cost savings to 24/7 customer support, learn why local businesses are embracing this technology and how to implement it effectively for maximum ROI.",
+      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd",
+      date: "May 26, 2025",
+      readTime: "9 min read",
+      url: "/blog/lucknow-startups-ai-chatbots-2025"
+    },
+    {
+      id: 2,
+      title: "Website Development in Lucknow 2025: Complete Business Guide & Cost Analysis", 
+      brief: "Comprehensive guide for Lucknow business owners covering website development costs, latest trends, industry-specific strategies, and choosing the right development partner. Includes detailed pricing analysis and local market insights.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+      date: "May 24, 2025",
+      readTime: "12 min read",
+      url: "/blog/lucknow-business-website-development-2025"
+    },
+    {
+      id: 3,
       title: "Top 5 Ways AI Chatbots Are Transforming Online Business",
       brief: "Discover how AI-powered chatbots are revolutionizing customer service with 24/7 availability, increasing conversion rates by up to 30%, reducing operational costs by 40%, and providing personalized experiences that boost customer satisfaction.",
       image: "https://images.unsplash.com/photo-1677608913670-909179c8a42f",
       date: "May 19, 2025",
       readTime: "6 min read",
       url: "/blog/top-ways-ai-chatbots-transforming-business"
-    },
-    {
-      id: 2,
-      title: "How Prompt Engineering is Making AI Smarter in 2025",
-      brief: "Explore the latest advancements in prompt engineering that are enabling more intelligent AI responses, including chain-of-thought prompting, few-shot learning techniques, and specialized prompt frameworks that produce up to 40% more accurate results.",
-      image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485",
-      date: "May 17, 2025",
-      readTime: "8 min read",
-      url: "/blog/prompt-engineering-making-ai-smarter"
-    },
-    {
-      id: 3,
-      title: "Best No-Code Tools for AI Website Development in 2025",
-      brief: "Comprehensive comparison of the top no-code platforms that integrate AI capabilities for website development, featuring drag-and-drop interfaces, pre-built AI components, and seamless integration options for businesses.",
-      image: "https://images.unsplash.com/photo-1633412802994-5c058f151b66",
-      date: "May 15, 2025",
-      readTime: "7 min read",
-      url: "/blog/no-code-tools-ai-website-development"
     }
   ];
 
