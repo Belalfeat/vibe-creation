@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
@@ -12,6 +11,9 @@ import ChatBot from '../components/ChatBot';
 import OrderFormPopup from '../components/OrderFormPopup';
 import AnimatedEntry from '../components/AnimatedEntry';
 import LocalSEOSection from '../components/LocalSEOSection';
+import PerformanceOptimizer from '../components/PerformanceOptimizer';
+import GoogleAnalytics from '../components/GoogleAnalytics';
+import CacheOptimizer from '../components/CacheOptimizer';
 import { Helmet } from 'react-helmet-async';
 import CodeRainAnimation from '../components/CodeRainAnimation';
 import FloatingCodeBlocks from '../components/FloatingCodeBlocks';
@@ -38,6 +40,13 @@ const Index: React.FC = () => {
         <meta name="geo.placename" content="Lucknow" />
         <meta name="geo.position" content="26.8467;80.9462" />
         <meta name="ICBM" content="26.8467, 80.9462" />
+        
+        {/* Performance Optimizations */}
+        <link rel="preload" href="/lovable-uploads/6ba6d661-5373-409c-9438-5b040793448e.png" as="image" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <meta httpEquiv="cache-control" content="public, max-age=31536000" />
+        
         <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
@@ -166,6 +175,11 @@ const Index: React.FC = () => {
           }
         `}</script>
       </Helmet>
+      
+      {/* Performance & Analytics Components */}
+      <PerformanceOptimizer />
+      <GoogleAnalytics trackingId="G-XXXXXXXXXX" />
+      <CacheOptimizer />
       
       {/* Animated Entry Component */}
       <AnimatedEntry />
